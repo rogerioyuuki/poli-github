@@ -25,7 +25,12 @@ class FIFO(object):
 
 
 class Process(object):
-    def __init__(self):
+    arrival_time = None
+    start_time = None
+    exit_time = None
+
+    def __init__(self, t):
+        self.arrival_time = t
         self.processing_time = distributions.get_processing_time()
 
 
@@ -34,13 +39,21 @@ class Processor(object):
     proc = None
     end_time = None
     stats = {"empty": 0, "busy": 0}
+    finish_list = []
 
     def start(self, t, proc):
+        # stats
+        proc.start_time = t
+        # set state
         self.empty = False
         self.proc = proc
         self.end_time = t + proc.processing_time
 
-    def finish(self):
+    def finish(self, t):
+        # stats
+        self.proc.exit_time = t
+        self.finish_list.append(self.proc)
+        # set state
         self.empty = True
         self.proc = None
         self.end_time = None

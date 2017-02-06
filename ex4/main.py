@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import distributions
 import events
 import elements
+import stats
 
 
 class Simulation(object):
@@ -33,14 +35,14 @@ class Simulation(object):
     def treat_arrival(self, arrival_time):
         self.jmp_time(arrival_time)
         if self.processor.empty:
-            self.processor.start(self.t, elements.Process())
+            self.processor.start(self.t, elements.Process(self.t))
             self.finish_event = events.Finish(self.processor.end_time)
         else:
-            self.queue.push(elements.Process())
+            self.queue.push(elements.Process(self.t))
 
     def treat_finish(self, finish_time):
         self.jmp_time(finish_time)
-        self.processor.finish()
+        self.processor.finish(self.t)
         self.finish_event = None
         if not self.queue.empty:
             self.processor.start(self.t, self.queue.pop())
@@ -63,8 +65,16 @@ class Simulation(object):
 def main(max_run_time):
     sim = Simulation(max_run_time)
     sim.run()
-    print(sim.processor.stats)
-
+    print("Quantidade de processos executados: " +
+          str(len(sim.processor.finish_list)))
+    print("Tempo médio de fila: " +
+          str(stats.average_queue_time(sim.processor.finish_list)))
+    print("Tempo médio no sistema: " +
+          str(stats.average_total_time(sim.processor.finish_list)))
+    print("Tamanho médio da fila: " +
+          str(stats.average_queue_size(sim.queue.stats)))
+    print("Porcentagem de utilização: " +
+          str(stats.busy_percentage(sim.processor.stats)) + "%")
 
 if __name__ == "__main__":
     main(max_run_time=3600)
