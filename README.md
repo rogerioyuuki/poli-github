@@ -1,2 +1,2 @@
-# poli-modelagem
-Repositório temporário para uso na disciplina de modelagem
+# poli
+Repositório temporário para uso nas disciplinas da poli
