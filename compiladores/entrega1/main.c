@@ -9,7 +9,7 @@ int main() {
     char const *enumTypes[] = {"IDENTIFIER", "INTEGER", "DECIMAL", "STRING", "KEYWORD", "SYMBOL", "EOF_TOKEN"};
 
     FILE *file;
-    file = fopen("lexico.teste", "r");
+    file = fopen("ENTRADA.txt", "r");
     yyin = file;
 
     Token token = yylex();
