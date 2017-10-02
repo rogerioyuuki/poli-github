@@ -1,0 +1,18 @@
+teste
+
+12
+
+772. 61.321
+
+.90
+
+// comentario
+
+
+/*
+comentario
+*/
+
+function teste(int *ok) {
+    return !ok;
+}

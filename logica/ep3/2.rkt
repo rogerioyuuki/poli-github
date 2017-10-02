@@ -8,15 +8,22 @@
     (filter (lambda (t)
       (cond
         [(set-member? estados (first (first t)))
-          (if (member (second (first t)) (list #\ϵ (string-ref w 0))) #t #f)]
+          (if (equal? (second (first t)) (string-ref w 0)) #t #f)]
         [else #f])
       ) d))
+  (define (fazer-transicoes transicoes)
+    (list->set (flatten (map second transicoes))))
+  (define (transicoes-vazias estados)
+    (let ([prox-estados (set-union estados (fazer-transicoes (transicoes estados "ε")))])
+      (cond
+        [(equal? prox-estados estados) estados]
+        [else (transicoes-vazias prox-estados)])))
   (define (passo estados w)
     (cond
       [(= 0 (string-length w)) (if (set-empty? (set-intersect estados F)) #f #t)]
       [(set-empty? estados) #f]
-      [else (let ([prox-transicoes (transicoes estados w)])
-        (passo (list->set (flatten (map second prox-transicoes))) (substring w 1)))]))
+      [else (let ([prox-estados (fazer-transicoes (transicoes (transicoes-vazias estados) w))])
+        (passo (transicoes-vazias prox-estados) (substring w 1)))]))
   (passo (set s) cadeia)))
 
 ; M = (K, A, d, s, F)
@@ -28,20 +35,23 @@
          ((q2 #\a) q0) )
       'q0 '(q0)))
 
-(define M2 (list '(q0 q1 q2 q3 q4) (list #\1 #\0)
-      '( ((q0 #\0) q0)
-         ((q0 #\1) q1)
-         ((q1 #\0) q2)
-         ((q1 #\1) q3)
-         ((q2 #\0) q4)
-         ((q2 #\1) q0)
-         ((q3 #\0) q1)
-         ((q3 #\1) q2)
-         ((q4 #\0) q3)
-         ((q4 #\1) q4) )
-      'q0 '(q0)))
+(define M2 (list '(s q0 q1 q2 f) (list #\a #\b)
+      '( ((s #\ε) q0)
+         ((q0 #\a) q0)
+         ((q0 #\b) q1)
+         ((q1 #\ε) f)
+         ((q1 #\a) q1)
+         ((q1 #\b) q2)
+         ((q2 #\a) q2)
+         ((q2 #\b) q0) )
+      's '(f)))
 
 (simular-nao-deterministico M1 "aaa")
 (simular-nao-deterministico M1 "ba")
 (simular-nao-deterministico M1 "ab")
 (simular-nao-deterministico M1 "abaaba")
+
+(simular-nao-deterministico M2 "aaa")
+(simular-nao-deterministico M2 "abaa")
+(simular-nao-deterministico M2 "abaabb")
+(simular-nao-deterministico M2 "abaabbb")
