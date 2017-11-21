@@ -1,0 +1,18 @@
+OH O HOME AI PO (MONSTRO soma(MONSTRO x, MONSTRO y))
+	BORA CUMPADE x + y;
+BIRL
+
+HORA DO SHOW
+	MONSTRO i, x = 0, y = 0;
+	MAIS QUERO MAIS (i = 0; i < 100; i++)
+		x = AJUDA O MALUCO TA DOENTE soma(x, i);
+	BIRL
+
+	ELE QUE A GENTE QUER? (x % 2 == 0)
+		y = x / 2;
+	NAO VAI DAR NAO
+		y = x;
+	BIRL
+
+	BORA CUMPADE 1;
+BIRL
