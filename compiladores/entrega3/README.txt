@@ -1,7 +1,8 @@
 Instrução de compilação:
 
 1) Ter 'flex' instalado na máquina
-2) Executar o Makefile ('make')
+2) Rodar python3 -m syntax.generator (OPCIONAL)
+3) Executar o Makefile ('make')
 
 Instrução de execução
 

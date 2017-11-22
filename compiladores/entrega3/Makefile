@@ -1,10 +1,12 @@
+SRC = lib/uthash.h lib/utarray.h lex.yy.c syntax/create_ape.c syntax/ape.c main.c
+
 all: main
 
 lex.yy.c: lexico.flex
 	flex lexico.flex
 
-main: lex.yy.c main.c
-	g++ lex.yy.c main.c -o main
+main: $(SRC)
+	g++ -ggdb $(SRC) -o birlcc
 
 clean:
-	rm main lex.yy.c
+	rm birlcc lex.yy.c

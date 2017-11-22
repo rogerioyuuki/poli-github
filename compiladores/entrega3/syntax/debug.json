@@ -1,0 +1,5685 @@
+{
+    "PROGRAMA": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "OH": {
+                        "transicao": "DEFINICAO",
+                        "saida": "0",
+                        "estado": "0"
+                    },
+                    "HORA": {
+                        "transicao": "MAIN",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BODYBUILDER": {
+                        "transicao": "DEFINICAO",
+                        "saida": "0",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "OH": {
+                        "transicao": "DEFINICAO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "BODYBUILDER": {
+                        "transicao": "DEFINICAO",
+                        "saida": "1",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "OH",
+            "HORA",
+            "BODYBUILDER"
+        ],
+        "inicial": "0",
+        "name": "PROGRAMA",
+        "regras": [
+            {
+                "transicao": "DEFINICAO",
+                "saida": "0",
+                "estado": "0"
+            },
+            {
+                "transicao": "MAIN",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "DEFINICAO",
+                "saida": "1",
+                "estado": "1"
+            }
+        ]
+    },
+    "SWITCH": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "5": {
+                "chamadas": {
+                    "ARVORE": {
+                        "transicao": "CASE",
+                        "saida": "5",
+                        "estado": "5"
+                    }
+                },
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "DERRUBAR": {
+                        "transicao": "\"DERRUBAR\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "ARVORES": {
+                        "transicao": "\"ARVORES\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "6"
+        ],
+        "FIRST": [
+            "DERRUBAR"
+        ],
+        "inicial": "0",
+        "name": "SWITCH",
+        "regras": [
+            {
+                "transicao": "\"DERRUBAR\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"ARVORES\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "CASE",
+                "saida": "5",
+                "estado": "5"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "6",
+                "estado": "5"
+            }
+        ]
+    },
+    "OPERADOR_COMP": {
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    ">": {
+                        "transicao": "\">\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "==": {
+                        "transicao": "\"==\"",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "<": {
+                        "transicao": "\"<\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "!=": {
+                        "transicao": "\"!=\"",
+                        "saida": "2",
+                        "estado": "0"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "=": {
+                        "transicao": "\"=\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1",
+            "2"
+        ],
+        "FIRST": [
+            ">",
+            "==",
+            "<",
+            "!="
+        ],
+        "inicial": "0",
+        "name": "OPERADOR_COMP",
+        "regras": [
+            {
+                "transicao": "\">\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"<\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"==\"",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"!=\"",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"=\"",
+                "saida": "2",
+                "estado": "1"
+            }
+        ]
+    },
+    "DECLARACAO_TIPO": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "3"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "MONSTRO",
+            "FRANGO",
+            "MONSTRAO",
+            "MONSTRINHO",
+            "BICEPS"
+        ],
+        "inicial": "0",
+        "name": "DECLARACAO_TIPO",
+        "regras": [
+            {
+                "transicao": "TIPO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "3",
+                "estado": "2"
+            }
+        ]
+    },
+    "BLOCO_CODIGO": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "SAI": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "ELE": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BORA": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MAIS": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "VAMO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "FRANGO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "SAI": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "BICEPS": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "ELE": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "BORA": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "MONSTRO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "MAIS": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    },
+                    "VAMO": {
+                        "transicao": "COMANDO",
+                        "saida": "1",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "FRANGO",
+            "MONSTRINHO",
+            "SAI",
+            "BICEPS",
+            "ELE",
+            "BORA",
+            "MONSTRO",
+            "DERRUBAR",
+            "MAIS",
+            "MONSTRAO",
+            "NEGATIVA",
+            "VAMO"
+        ],
+        "inicial": "0",
+        "name": "BLOCO_CODIGO",
+        "regras": [
+            {
+                "transicao": "COMANDO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "COMANDO",
+                "saida": "1",
+                "estado": "1"
+            }
+        ]
+    },
+    "IF": {
+        "estados": {
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "GENTE": {
+                        "transicao": "\"GENTE\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "7",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    "?": {
+                        "transicao": "\"?\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "7": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    "QUER": {
+                        "transicao": "\"QUER\"",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                }
+            },
+            "8": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "9",
+                        "estado": "8"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "QUE": {
+                        "transicao": "\"QUE\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "A": {
+                        "transicao": "\"A\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "ELE": {
+                        "transicao": "\"ELE\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "9": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "9"
+                    }
+                },
+                "transicoes": {}
+            },
+            "10": {
+                "chamadas": {
+                    "QUE": {
+                        "transicao": "ELSE_IF",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "NAO": {
+                        "transicao": "ELSE_IF",
+                        "saida": "11",
+                        "estado": "10"
+                    }
+                },
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "12",
+                        "estado": "10"
+                    }
+                }
+            },
+            "11": {
+                "chamadas": {},
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "12",
+                        "estado": "11"
+                    }
+                }
+            }
+        },
+        "final": [
+            "12"
+        ],
+        "FIRST": [
+            "ELE"
+        ],
+        "inicial": "0",
+        "name": "IF",
+        "regras": [
+            {
+                "transicao": "\"ELE\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"QUE\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"A\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"GENTE\"",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"QUER\"",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "\"?\"",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "7",
+                "estado": "6"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "8",
+                "estado": "7"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "9",
+                "estado": "8"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "10",
+                "estado": "9"
+            },
+            {
+                "transicao": "ELSE_IF",
+                "saida": "11",
+                "estado": "10"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "12",
+                "estado": "10"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "12",
+                "estado": "11"
+            }
+        ]
+    },
+    "COMANDO_ATRIBUICAO": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    ",": {
+                        "transicao": "\",\"",
+                        "saida": "1",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "ATRIBUICAO",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "3"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "MONSTRO",
+            "FRANGO",
+            "MONSTRAO",
+            "MONSTRINHO",
+            "BICEPS"
+        ],
+        "inicial": "0",
+        "name": "COMANDO_ATRIBUICAO",
+        "regras": [
+            {
+                "transicao": "TIPO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "ATRIBUICAO",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\",\"",
+                "saida": "1",
+                "estado": "2"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "3",
+                "estado": "2"
+            }
+        ]
+    },
+    "FUNCAO": {
+        "estados": {
+            "13": {
+                "chamadas": {},
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "14",
+                        "estado": "13"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "AI": {
+                        "transicao": "\"AI\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "MONSTRO": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "FRANGO": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "BICEPS": {
+                        "transicao": "TIPO",
+                        "saida": "7",
+                        "estado": "6"
+                    }
+                },
+                "transicoes": {}
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "7": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "8",
+                        "estado": "7"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    "PO": {
+                        "transicao": "\"PO\"",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                }
+            },
+            "12": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "13",
+                        "estado": "12"
+                    }
+                },
+                "transicoes": {}
+            },
+            "8": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "9",
+                        "estado": "8"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "O": {
+                        "transicao": "\"O\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "HOME": {
+                        "transicao": "\"HOME\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "OH": {
+                        "transicao": "\"OH\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "9": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRO": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "FRANGO": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    },
+                    "BICEPS": {
+                        "transicao": "LISTA_PARAMETROS",
+                        "saida": "10",
+                        "estado": "9"
+                    }
+                },
+                "transicoes": {}
+            },
+            "10": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "11",
+                        "estado": "10"
+                    }
+                }
+            },
+            "11": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "12",
+                        "estado": "11"
+                    }
+                }
+            }
+        },
+        "final": [
+            "14"
+        ],
+        "FIRST": [
+            "OH"
+        ],
+        "inicial": "0",
+        "name": "FUNCAO",
+        "regras": [
+            {
+                "transicao": "\"OH\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"O\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"HOME\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"AI\"",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"PO\"",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "TIPO",
+                "saida": "7",
+                "estado": "6"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "8",
+                "estado": "7"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "9",
+                "estado": "8"
+            },
+            {
+                "transicao": "LISTA_PARAMETROS",
+                "saida": "10",
+                "estado": "9"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "11",
+                "estado": "10"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "12",
+                "estado": "11"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "13",
+                "estado": "12"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "14",
+                "estado": "13"
+            }
+        ]
+    },
+    "ATRIBUICAO": {
+        "estados": {
+            "2": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "=": {
+                        "transicao": "\"=\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1",
+            "3"
+        ],
+        "FIRST": [
+            "IDENTIFICADOR"
+        ],
+        "inicial": "0",
+        "name": "ATRIBUICAO",
+        "regras": [
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"=\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "3",
+                "estado": "2"
+            }
+        ]
+    },
+    "CONDICIONAL": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "DERRUBAR": {
+                        "transicao": "SWITCH",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "ELE": {
+                        "transicao": "IF",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "DERRUBAR",
+            "ELE"
+        ],
+        "inicial": "0",
+        "name": "CONDICIONAL",
+        "regras": [
+            {
+                "transicao": "IF",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "SWITCH",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "MAIN": {
+        "estados": {
+            "3": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "SHOW": {
+                        "transicao": "\"SHOW\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "HORA": {
+                        "transicao": "\"HORA\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "DO": {
+                        "transicao": "\"DO\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "5"
+        ],
+        "FIRST": [
+            "HORA"
+        ],
+        "inicial": "0",
+        "name": "MAIN",
+        "regras": [
+            {
+                "transicao": "\"HORA\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"DO\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"SHOW\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "5",
+                "estado": "4"
+            }
+        ]
+    },
+    "OPERADOR_BOOL": {
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "||": {
+                        "transicao": "\"||\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "&&": {
+                        "transicao": "\"&&\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "||",
+            "&&"
+        ],
+        "inicial": "0",
+        "name": "OPERADOR_BOOL",
+        "regras": [
+            {
+                "transicao": "\"&&\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"||\"",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "EXPRESSAO_ARITM_CONST": {
+        "estados": {
+            "3": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "5",
+                        "estado": "3"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "5",
+                        "estado": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "2",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "2",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "NUMERO",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "3",
+                        "estado": "0"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "2",
+                        "estado": "5"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "/": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "%": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "*": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "+": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "_": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "2"
+        ],
+        "FIRST": [
+            "NUMERO",
+            "("
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO_ARITM_CONST",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "NUMERO",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "OPERADOR_ARITM",
+                "saida": "4",
+                "estado": "1"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "5",
+                "estado": "3"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "2",
+                "estado": "4"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "2",
+                "estado": "5"
+            }
+        ]
+    },
+    "CHAMADA_FUNCAO": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "MALUCO": {
+                        "transicao": "\"MALUCO\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "TA": {
+                        "transicao": "\"TA\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "7",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                },
+                "transicoes": {}
+            },
+            "7": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "7"
+                    }
+                },
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "9",
+                        "estado": "7"
+                    }
+                }
+            },
+            "10": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "8",
+                        "estado": "10"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "AJUDA": {
+                        "transicao": "\"AJUDA\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    "DOENTE": {
+                        "transicao": "\"DOENTE\"",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                }
+            },
+            "8": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    ",": {
+                        "transicao": "\",\"",
+                        "saida": "10",
+                        "estado": "8"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "O": {
+                        "transicao": "\"O\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "9"
+        ],
+        "FIRST": [
+            "AJUDA"
+        ],
+        "inicial": "0",
+        "name": "CHAMADA_FUNCAO",
+        "regras": [
+            {
+                "transicao": "\"AJUDA\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"O\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"MALUCO\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"TA\"",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"DOENTE\"",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "7",
+                "estado": "6"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "8",
+                "estado": "7"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "9",
+                "estado": "7"
+            },
+            {
+                "transicao": "\",\"",
+                "saida": "10",
+                "estado": "8"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "9",
+                "estado": "8"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "8",
+                "estado": "10"
+            }
+        ]
+    },
+    "STRUCT": {
+        "estados": {
+            "3": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    },
+                    "MONSTRO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    },
+                    "FRANGO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    },
+                    "BICEPS": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "3"
+                    }
+                },
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "MONSTRO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "FRANGO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "BICEPS": {
+                        "transicao": "DECLARACAO_TIPO",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "BODYBUILDER": {
+                        "transicao": "\"BODYBUILDER\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "4"
+        ],
+        "FIRST": [
+            "BODYBUILDER"
+        ],
+        "inicial": "0",
+        "name": "STRUCT",
+        "regras": [
+            {
+                "transicao": "\"BODYBUILDER\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "DECLARACAO_TIPO",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "DECLARACAO_TIPO",
+                "saida": "3",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "4",
+                "estado": "3"
+            }
+        ]
+    },
+    "DEFINICAO": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "OH": {
+                        "transicao": "FUNCAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BODYBUILDER": {
+                        "transicao": "STRUCT",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "OH",
+            "BODYBUILDER"
+        ],
+        "inicial": "0",
+        "name": "DEFINICAO",
+        "regras": [
+            {
+                "transicao": "STRUCT",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "FUNCAO",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "WHILE": {
+        "estados": {
+            "2": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "NEGATIVA": {
+                        "transicao": "\"NEGATIVA\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "BAMBAM (": {
+                        "transicao": "\"BAMBAM (\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "6"
+        ],
+        "FIRST": [
+            "NEGATIVA"
+        ],
+        "inicial": "0",
+        "name": "WHILE",
+        "regras": [
+            {
+                "transicao": "\"NEGATIVA\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"BAMBAM (\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "6",
+                "estado": "5"
+            }
+        ]
+    },
+    "EXPRESSAO": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "IDENTIFICADOR",
+            "FIBRA",
+            "AJUDA",
+            "NUMERO",
+            "NEGATIVA",
+            "AGUA",
+            "("
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_BOOL",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "EXPRESSAO_CONSTANTE": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "NUMERO",
+            "FIBRA",
+            "NEGATIVA",
+            "AGUA",
+            "("
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO_CONSTANTE",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_BOOL_CONST",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "EXPRESSAO_BOOL_CONST": {
+        "estados": {
+            "2": {
+                "chamadas": {
+                    ">": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "==": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "<": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "!=": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {
+                    "AGUA": {
+                        "transicao": "\"AGUA\"",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "\"FIBRA\"",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "\"NEGATIVA\"",
+                        "saida": "4",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "5",
+                        "estado": "0"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "3",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                },
+                "transicoes": {}
+            },
+            "7": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "3",
+                        "estado": "7"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM_CONST",
+                        "saida": "3",
+                        "estado": "7"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL_CONST",
+                        "saida": "3",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "||": {
+                        "transicao": "OPERADOR_BOOL",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "&&": {
+                        "transicao": "OPERADOR_BOOL",
+                        "saida": "4",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "3"
+        ],
+        "FIRST": [
+            "NUMERO",
+            "FIBRA",
+            "NEGATIVA",
+            "AGUA",
+            "("
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO_BOOL_CONST",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_BOOL_CONST",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"FIBRA\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"AGUA\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"NEGATIVA\"",
+                "saida": "4",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "5",
+                "estado": "0"
+            },
+            {
+                "transicao": "OPERADOR_BOOL",
+                "saida": "4",
+                "estado": "1"
+            },
+            {
+                "transicao": "OPERADOR_COMP",
+                "saida": "7",
+                "estado": "2"
+            },
+            {
+                "transicao": "EXPRESSAO_BOOL_CONST",
+                "saida": "3",
+                "estado": "4"
+            },
+            {
+                "transicao": "EXPRESSAO_BOOL_CONST",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "3",
+                "estado": "6"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM_CONST",
+                "saida": "3",
+                "estado": "7"
+            }
+        ]
+    },
+    "CASE": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    ":": {
+                        "transicao": "\":\"",
+                        "saida": "4",
+                        "estado": "2"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "PARQUE": {
+                        "transicao": "\"PARQUE\"",
+                        "saida": "5",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {
+                    "ARVORE": {
+                        "transicao": "CASE",
+                        "saida": "8",
+                        "estado": "6"
+                    }
+                },
+                "transicoes": {}
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    "DO": {
+                        "transicao": "\"DO\"",
+                        "saida": "7",
+                        "estado": "5"
+                    }
+                }
+            },
+            "7": {
+                "chamadas": {},
+                "transicoes": {
+                    "IBIRAPUERA": {
+                        "transicao": "\"IBIRAPUERA\"",
+                        "saida": "9",
+                        "estado": "7"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "ARVORE": {
+                        "transicao": "\"ARVORE\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "6",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "9": {
+                "chamadas": {},
+                "transicoes": {
+                    ":": {
+                        "transicao": "\":\"",
+                        "saida": "10",
+                        "estado": "9"
+                    }
+                }
+            },
+            "10": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "8",
+                        "estado": "10"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_CONSTANTE",
+                        "saida": "2",
+                        "estado": "1"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_CONSTANTE",
+                        "saida": "2",
+                        "estado": "1"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_CONSTANTE",
+                        "saida": "2",
+                        "estado": "1"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_CONSTANTE",
+                        "saida": "2",
+                        "estado": "1"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_CONSTANTE",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {
+                    "DO": {
+                        "transicao": "\"DO\"",
+                        "saida": "3",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "6",
+            "8"
+        ],
+        "FIRST": [
+            "ARVORE"
+        ],
+        "inicial": "0",
+        "name": "CASE",
+        "regras": [
+            {
+                "transicao": "\"ARVORE\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "EXPRESSAO_CONSTANTE",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"DO\"",
+                "saida": "3",
+                "estado": "1"
+            },
+            {
+                "transicao": "\":\"",
+                "saida": "4",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"PARQUE\"",
+                "saida": "5",
+                "estado": "3"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "6",
+                "estado": "4"
+            },
+            {
+                "transicao": "\"DO\"",
+                "saida": "7",
+                "estado": "5"
+            },
+            {
+                "transicao": "CASE",
+                "saida": "8",
+                "estado": "6"
+            },
+            {
+                "transicao": "\"IBIRAPUERA\"",
+                "saida": "9",
+                "estado": "7"
+            },
+            {
+                "transicao": "\":\"",
+                "saida": "10",
+                "estado": "9"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "8",
+                "estado": "10"
+            }
+        ]
+    },
+    "EXPRESSAO_ARITM": {
+        "estados": {
+            "3": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "5",
+                        "estado": "3"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "5",
+                        "estado": "3"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "5",
+                        "estado": "3"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "5",
+                        "estado": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "4"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "4"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "NUMERO": {
+                        "transicao": "NUMERO",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "AJUDA": {
+                        "transicao": "CHAMADA_FUNCAO",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "3",
+                        "estado": "0"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "2",
+                        "estado": "5"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "/": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "%": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "*": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "+": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "_": {
+                        "transicao": "OPERADOR_ARITM",
+                        "saida": "4",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "2"
+        ],
+        "FIRST": [
+            "IDENTIFICADOR",
+            "AJUDA",
+            "(",
+            "NUMERO"
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO_ARITM",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "CHAMADA_FUNCAO",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "NUMERO",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "OPERADOR_ARITM",
+                "saida": "4",
+                "estado": "1"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "5",
+                "estado": "3"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "2",
+                "estado": "4"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "2",
+                "estado": "5"
+            }
+        ]
+    },
+    "COMANDO": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "SAI": {
+                        "transicao": "PULO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "ELE": {
+                        "transicao": "CONDICIONAL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BORA": {
+                        "transicao": "PULO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "CONDICIONAL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MAIS": {
+                        "transicao": "ITERATIVO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "COMANDO_ATRIBUICAO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "ITERATIVO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "VAMO": {
+                        "transicao": "PULO",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "FRANGO",
+            "MONSTRINHO",
+            "SAI",
+            "BICEPS",
+            "ELE",
+            "BORA",
+            "MONSTRO",
+            "DERRUBAR",
+            "MAIS",
+            "MONSTRAO",
+            "NEGATIVA",
+            "VAMO"
+        ],
+        "inicial": "0",
+        "name": "COMANDO",
+        "regras": [
+            {
+                "transicao": "COMANDO_ATRIBUICAO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "CONDICIONAL",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "ITERATIVO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "PULO",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "LISTA_PARAMETROS": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    ",": {
+                        "transicao": "\",\"",
+                        "saida": "0",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "TIPO",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "2"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "MONSTRO",
+            "FRANGO",
+            "MONSTRAO",
+            "MONSTRINHO",
+            "BICEPS"
+        ],
+        "inicial": "0",
+        "name": "LISTA_PARAMETROS",
+        "regras": [
+            {
+                "transicao": "TIPO",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\",\"",
+                "saida": "0",
+                "estado": "2"
+            }
+        ]
+    },
+    "EXPRESSAO_BOOL": {
+        "estados": {
+            "2": {
+                "chamadas": {
+                    ">": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "==": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "<": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    },
+                    "!=": {
+                        "transicao": "OPERADOR_COMP",
+                        "saida": "7",
+                        "estado": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "IDENTIFICADOR",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "AJUDA": {
+                        "transicao": "CHAMADA_FUNCAO",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {
+                    "AGUA": {
+                        "transicao": "\"AGUA\"",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "FIBRA": {
+                        "transicao": "\"FIBRA\"",
+                        "saida": "3",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "\"NEGATIVA\"",
+                        "saida": "4",
+                        "estado": "0"
+                    },
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "5",
+                        "estado": "0"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "3",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                },
+                "transicoes": {}
+            },
+            "7": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "3",
+                        "estado": "7"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "3",
+                        "estado": "7"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "3",
+                        "estado": "7"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_ARITM",
+                        "saida": "3",
+                        "estado": "7"
+                    }
+                },
+                "transicoes": {}
+            },
+            "4": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO_BOOL",
+                        "saida": "3",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "||": {
+                        "transicao": "OPERADOR_BOOL",
+                        "saida": "4",
+                        "estado": "1"
+                    },
+                    "&&": {
+                        "transicao": "OPERADOR_BOOL",
+                        "saida": "4",
+                        "estado": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "3"
+        ],
+        "FIRST": [
+            "FIBRA",
+            "NEGATIVA",
+            "(",
+            "IDENTIFICADOR",
+            "NUMERO",
+            "AGUA",
+            "AJUDA"
+        ],
+        "inicial": "0",
+        "name": "EXPRESSAO_BOOL",
+        "regras": [
+            {
+                "transicao": "EXPRESSAO_BOOL",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "IDENTIFICADOR",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "CHAMADA_FUNCAO",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"FIBRA\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"AGUA\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"NEGATIVA\"",
+                "saida": "4",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "5",
+                "estado": "0"
+            },
+            {
+                "transicao": "OPERADOR_BOOL",
+                "saida": "4",
+                "estado": "1"
+            },
+            {
+                "transicao": "OPERADOR_COMP",
+                "saida": "7",
+                "estado": "2"
+            },
+            {
+                "transicao": "EXPRESSAO_BOOL",
+                "saida": "3",
+                "estado": "4"
+            },
+            {
+                "transicao": "EXPRESSAO_BOOL",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "3",
+                "estado": "6"
+            },
+            {
+                "transicao": "EXPRESSAO_ARITM",
+                "saida": "3",
+                "estado": "7"
+            }
+        ]
+    },
+    "OPERADOR_ARITM": {
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "/": {
+                        "transicao": "\"/\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "*": {
+                        "transicao": "\"*\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "_": {
+                        "transicao": "\"_\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "+": {
+                        "transicao": "\"+\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "%": {
+                        "transicao": "\"%\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "/",
+            "*",
+            "%",
+            "_",
+            "+"
+        ],
+        "inicial": "0",
+        "name": "OPERADOR_ARITM",
+        "regras": [
+            {
+                "transicao": "\"+\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"_\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"/\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"*\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"%\"",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "TIPO": {
+        "estados": {
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "MONSTRO": {
+                        "transicao": "\"MONSTRO\"",
+                        "saida": "1",
+                        "estado": "3"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "\"MONSTRINHO\"",
+                        "saida": "1",
+                        "estado": "3"
+                    },
+                    "FRANGO": {
+                        "transicao": "\"FRANGO\"",
+                        "saida": "1",
+                        "estado": "3"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "\"MONSTRAO\"",
+                        "saida": "1",
+                        "estado": "3"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "DESCENDENTE": {
+                        "transicao": "\"DESCENDENTE\"",
+                        "saida": "1",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "TRAPEZIO": {
+                        "transicao": "\"TRAPEZIO\"",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "MONSTRO": {
+                        "transicao": "\"MONSTRO\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "FRANGO": {
+                        "transicao": "\"FRANGO\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "\"MONSTRAO\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "\"MONSTRINHO\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "BICEPS": {
+                        "transicao": "\"BICEPS\"",
+                        "saida": "3",
+                        "estado": "0"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1",
+            "2"
+        ],
+        "FIRST": [
+            "TRAPEZIO",
+            "FRANGO",
+            "MONSTRINHO",
+            "BICEPS",
+            "MONSTRO",
+            "MONSTRAO"
+        ],
+        "inicial": "0",
+        "name": "TIPO",
+        "regras": [
+            {
+                "transicao": "\"FRANGO\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"MONSTRINHO\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"MONSTRO\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"MONSTRAO\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"TRAPEZIO\"",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"BICEPS\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"DESCENDENTE\"",
+                "saida": "1",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"FRANGO\"",
+                "saida": "1",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"MONSTRINHO\"",
+                "saida": "1",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"MONSTRO\"",
+                "saida": "1",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"MONSTRAO\"",
+                "saida": "1",
+                "estado": "3"
+            }
+        ]
+    },
+    "LETRA": {
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "C": {
+                        "transicao": "\"C\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "e": {
+                        "transicao": "\"e\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "S": {
+                        "transicao": "\"S\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "i": {
+                        "transicao": "\"i\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "Z": {
+                        "transicao": "\"Z\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "m": {
+                        "transicao": "\"m\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "R": {
+                        "transicao": "\"R\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "H": {
+                        "transicao": "\"H\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "z": {
+                        "transicao": "\"z\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "s": {
+                        "transicao": "\"s\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "V": {
+                        "transicao": "\"V\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "l": {
+                        "transicao": "\"l\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "f": {
+                        "transicao": "\"f\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "j": {
+                        "transicao": "\"j\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "T": {
+                        "transicao": "\"T\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "F": {
+                        "transicao": "\"F\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "n": {
+                        "transicao": "\"n\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "h": {
+                        "transicao": "\"h\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "W": {
+                        "transicao": "\"W\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "v": {
+                        "transicao": "\"v\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "u": {
+                        "transicao": "\"u\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "E": {
+                        "transicao": "\"E\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "q": {
+                        "transicao": "\"q\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "N": {
+                        "transicao": "\"N\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "I": {
+                        "transicao": "\"I\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "k": {
+                        "transicao": "\"k\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "Y": {
+                        "transicao": "\"Y\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "d": {
+                        "transicao": "\"d\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "X": {
+                        "transicao": "\"X\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "Q": {
+                        "transicao": "\"Q\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "o": {
+                        "transicao": "\"o\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "w": {
+                        "transicao": "\"w\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "x": {
+                        "transicao": "\"x\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "t": {
+                        "transicao": "\"t\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "a": {
+                        "transicao": "\"a\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "D": {
+                        "transicao": "\"D\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "U": {
+                        "transicao": "\"U\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "O": {
+                        "transicao": "\"O\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "P": {
+                        "transicao": "\"P\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "M": {
+                        "transicao": "\"M\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "c": {
+                        "transicao": "\"c\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "p": {
+                        "transicao": "\"p\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "J": {
+                        "transicao": "\"J\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "A": {
+                        "transicao": "\"A\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "b": {
+                        "transicao": "\"b\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "r": {
+                        "transicao": "\"r\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "y": {
+                        "transicao": "\"y\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "g": {
+                        "transicao": "\"g\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "G": {
+                        "transicao": "\"G\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "K": {
+                        "transicao": "\"K\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "L": {
+                        "transicao": "\"L\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "B": {
+                        "transicao": "\"B\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "C",
+            "e",
+            "i",
+            "Z",
+            "k",
+            "m",
+            "R",
+            "H",
+            "z",
+            "l",
+            "T",
+            "F",
+            "n",
+            "E",
+            "h",
+            "W",
+            "v",
+            "u",
+            "Y",
+            "q",
+            "N",
+            "I",
+            "V",
+            "d",
+            "Q",
+            "X",
+            "o",
+            "w",
+            "x",
+            "t",
+            "S",
+            "a",
+            "j",
+            "D",
+            "O",
+            "P",
+            "M",
+            "c",
+            "p",
+            "J",
+            "A",
+            "b",
+            "g",
+            "f",
+            "r",
+            "s",
+            "y",
+            "G",
+            "K",
+            "L",
+            "B",
+            "U"
+        ],
+        "inicial": "0",
+        "name": "LETRA",
+        "regras": [
+            {
+                "transicao": "\"a\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"b\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"c\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"d\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"e\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"f\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"g\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"h\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"i\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"j\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"k\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"l\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"m\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"n\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"o\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"p\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"q\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"r\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"s\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"t\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"u\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"v\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"w\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"x\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"y\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"z\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"A\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"B\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"C\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"D\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"E\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"F\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"G\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"H\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"I\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"J\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"K\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"L\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"M\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"N\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"O\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"P\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"Q\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"R\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"S\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"T\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"U\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"V\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"W\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"X\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"Y\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"Z\"",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "ELSE_IF": {
+        "estados": {
+            "13": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "14",
+                        "estado": "13"
+                    }
+                },
+                "transicoes": {}
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "VAI": {
+                        "transicao": "\"VAI\"",
+                        "saida": "5",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {},
+                "transicoes": {
+                    "NAO": {
+                        "transicao": "\"NAO\"",
+                        "saida": "8",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    "DAR": {
+                        "transicao": "\"DAR\"",
+                        "saida": "7",
+                        "estado": "5"
+                    }
+                }
+            },
+            "14": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "15",
+                        "estado": "14"
+                    }
+                }
+            },
+            "7": {
+                "chamadas": {},
+                "transicoes": {
+                    "O": {
+                        "transicao": "\"O\"",
+                        "saida": "9",
+                        "estado": "7"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {},
+                "transicoes": {
+                    "DAR": {
+                        "transicao": "\"DAR\"",
+                        "saida": "6",
+                        "estado": "4"
+                    }
+                }
+            },
+            "12": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "13",
+                        "estado": "12"
+                    }
+                }
+            },
+            "8": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "10",
+                        "estado": "8"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "NAO": {
+                        "transicao": "\"NAO\"",
+                        "saida": "3",
+                        "estado": "1"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "VAI": {
+                        "transicao": "\"VAI\"",
+                        "saida": "4",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "QUE": {
+                        "transicao": "\"QUE\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NAO": {
+                        "transicao": "\"NAO\"",
+                        "saida": "2",
+                        "estado": "0"
+                    }
+                }
+            },
+            "9": {
+                "chamadas": {},
+                "transicoes": {
+                    "QUE": {
+                        "transicao": "\"QUE\"",
+                        "saida": "11",
+                        "estado": "9"
+                    }
+                }
+            },
+            "11": {
+                "chamadas": {},
+                "transicoes": {
+                    "?": {
+                        "transicao": "\"?\"",
+                        "saida": "12",
+                        "estado": "11"
+                    }
+                }
+            },
+            "15": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "16",
+                        "estado": "15"
+                    }
+                },
+                "transicoes": {}
+            },
+            "16": {
+                "chamadas": {
+                    "QUE": {
+                        "transicao": "ELSE_IF",
+                        "saida": "10",
+                        "estado": "16"
+                    },
+                    "NAO": {
+                        "transicao": "ELSE_IF",
+                        "saida": "10",
+                        "estado": "16"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "10",
+            "16"
+        ],
+        "FIRST": [
+            "QUE",
+            "NAO"
+        ],
+        "inicial": "0",
+        "name": "ELSE_IF",
+        "regras": [
+            {
+                "transicao": "\"QUE\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"NAO\"",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"NAO\"",
+                "saida": "3",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"VAI\"",
+                "saida": "4",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"VAI\"",
+                "saida": "5",
+                "estado": "3"
+            },
+            {
+                "transicao": "\"DAR\"",
+                "saida": "6",
+                "estado": "4"
+            },
+            {
+                "transicao": "\"DAR\"",
+                "saida": "7",
+                "estado": "5"
+            },
+            {
+                "transicao": "\"NAO\"",
+                "saida": "8",
+                "estado": "6"
+            },
+            {
+                "transicao": "\"O\"",
+                "saida": "9",
+                "estado": "7"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "10",
+                "estado": "8"
+            },
+            {
+                "transicao": "\"QUE\"",
+                "saida": "11",
+                "estado": "9"
+            },
+            {
+                "transicao": "\"?\"",
+                "saida": "12",
+                "estado": "11"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "13",
+                "estado": "12"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "14",
+                "estado": "13"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "15",
+                "estado": "14"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "16",
+                "estado": "15"
+            },
+            {
+                "transicao": "ELSE_IF",
+                "saida": "10",
+                "estado": "16"
+            }
+        ]
+    },
+    "DIGITO": {
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "2": {
+                        "transicao": "\"2\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "3": {
+                        "transicao": "\"3\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "6": {
+                        "transicao": "\"6\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "5": {
+                        "transicao": "\"5\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "7": {
+                        "transicao": "\"7\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "0": {
+                        "transicao": "\"0\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "4": {
+                        "transicao": "\"4\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "9": {
+                        "transicao": "\"9\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "8": {
+                        "transicao": "\"8\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "1": {
+                        "transicao": "\"1\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "3",
+            "6",
+            "5",
+            "7",
+            "4",
+            "8",
+            "1",
+            "2",
+            "0",
+            "9"
+        ],
+        "inicial": "0",
+        "name": "DIGITO",
+        "regras": [
+            {
+                "transicao": "\"0\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"1\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"2\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"3\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"4\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"5\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"6\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"7\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"8\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"9\"",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "PULO": {
+        "estados": {
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "FDP": {
+                        "transicao": "\"FDP\"",
+                        "saida": "5",
+                        "estado": "2"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "MONSTRO": {
+                        "transicao": "\"MONSTRO\"",
+                        "saida": "5",
+                        "estado": "3"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "BORA": {
+                        "transicao": "\"BORA\"",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "SAI": {
+                        "transicao": "\"SAI\"",
+                        "saida": "2",
+                        "estado": "0"
+                    },
+                    "VAMO": {
+                        "transicao": "\"VAMO\"",
+                        "saida": "3",
+                        "estado": "0"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "CUMPADE": {
+                        "transicao": "\"CUMPADE\"",
+                        "saida": "4",
+                        "estado": "1"
+                    }
+                }
+            }
+        },
+        "final": [
+            "6"
+        ],
+        "FIRST": [
+            "BORA",
+            "SAI",
+            "VAMO"
+        ],
+        "inicial": "0",
+        "name": "PULO",
+        "regras": [
+            {
+                "transicao": "\"BORA\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"SAI\"",
+                "saida": "2",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"VAMO\"",
+                "saida": "3",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"CUMPADE\"",
+                "saida": "4",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"FDP\"",
+                "saida": "5",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"MONSTRO\"",
+                "saida": "5",
+                "estado": "3"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "6",
+                "estado": "5"
+            }
+        ]
+    },
+    "ITERATIVO": {
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "MAIS": {
+                        "transicao": "FOR",
+                        "saida": "1",
+                        "estado": "0"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "WHILE",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "final": [
+            "1"
+        ],
+        "FIRST": [
+            "MAIS",
+            "NEGATIVA"
+        ],
+        "inicial": "0",
+        "name": "ITERATIVO",
+        "regras": [
+            {
+                "transicao": "FOR",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "WHILE",
+                "saida": "1",
+                "estado": "0"
+            }
+        ]
+    },
+    "FOR": {
+        "estados": {
+            "3": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "transicao": "\"(\"",
+                        "saida": "4",
+                        "estado": "3"
+                    }
+                }
+            },
+            "6": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "7",
+                        "estado": "6"
+                    }
+                },
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "8",
+                        "estado": "6"
+                    }
+                }
+            },
+            "5": {
+                "chamadas": {},
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "6",
+                        "estado": "5"
+                    }
+                }
+            },
+            "7": {
+                "chamadas": {},
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "8",
+                        "estado": "7"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "5",
+                        "estado": "4"
+                    }
+                },
+                "transicoes": {
+                    ";": {
+                        "transicao": "\";\"",
+                        "saida": "6",
+                        "estado": "4"
+                    }
+                }
+            },
+            "8": {
+                "chamadas": {
+                    "IDENTIFICADOR": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "FIBRA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "NUMERO": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "AJUDA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "(": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    },
+                    "AGUA": {
+                        "transicao": "EXPRESSAO",
+                        "saida": "9",
+                        "estado": "8"
+                    }
+                },
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "10",
+                        "estado": "8"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {},
+                "transicoes": {
+                    "QUERO": {
+                        "transicao": "\"QUERO\"",
+                        "saida": "2",
+                        "estado": "1"
+                    }
+                }
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    "MAIS": {
+                        "transicao": "\"MAIS\"",
+                        "saida": "3",
+                        "estado": "2"
+                    }
+                }
+            },
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "MAIS": {
+                        "transicao": "\"MAIS\"",
+                        "saida": "1",
+                        "estado": "0"
+                    }
+                }
+            },
+            "9": {
+                "chamadas": {},
+                "transicoes": {
+                    ")": {
+                        "transicao": "\")\"",
+                        "saida": "10",
+                        "estado": "9"
+                    }
+                }
+            },
+            "10": {
+                "chamadas": {
+                    "TRAPEZIO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "FRANGO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "MONSTRINHO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "SAI": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "BICEPS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "ELE": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "BORA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "MONSTRO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "DERRUBAR": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "MAIS": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "MONSTRAO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "NEGATIVA": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    },
+                    "VAMO": {
+                        "transicao": "BLOCO_CODIGO",
+                        "saida": "11",
+                        "estado": "10"
+                    }
+                },
+                "transicoes": {}
+            },
+            "11": {
+                "chamadas": {},
+                "transicoes": {
+                    "BIRL": {
+                        "transicao": "\"BIRL\"",
+                        "saida": "12",
+                        "estado": "11"
+                    }
+                }
+            }
+        },
+        "final": [
+            "12"
+        ],
+        "FIRST": [
+            "MAIS"
+        ],
+        "inicial": "0",
+        "name": "FOR",
+        "regras": [
+            {
+                "transicao": "\"MAIS\"",
+                "saida": "1",
+                "estado": "0"
+            },
+            {
+                "transicao": "\"QUERO\"",
+                "saida": "2",
+                "estado": "1"
+            },
+            {
+                "transicao": "\"MAIS\"",
+                "saida": "3",
+                "estado": "2"
+            },
+            {
+                "transicao": "\"(\"",
+                "saida": "4",
+                "estado": "3"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "5",
+                "estado": "4"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "6",
+                "estado": "4"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "6",
+                "estado": "5"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "7",
+                "estado": "6"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "8",
+                "estado": "6"
+            },
+            {
+                "transicao": "\";\"",
+                "saida": "8",
+                "estado": "7"
+            },
+            {
+                "transicao": "EXPRESSAO",
+                "saida": "9",
+                "estado": "8"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "10",
+                "estado": "8"
+            },
+            {
+                "transicao": "\")\"",
+                "saida": "10",
+                "estado": "9"
+            },
+            {
+                "transicao": "BLOCO_CODIGO",
+                "saida": "11",
+                "estado": "10"
+            },
+            {
+                "transicao": "\"BIRL\"",
+                "saida": "12",
+                "estado": "11"
+            }
+        ]
+    }
+}
