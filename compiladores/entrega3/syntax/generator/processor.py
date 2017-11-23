@@ -40,7 +40,15 @@ def preprocess_estados(automato, automato_dict):
             estado['chamadas'][transicao] = regra
         else:
             for first in automato_dict[transicao]['FIRST']:
+                if first in estado['chamadas']:
+                    print("[{}] mais de uma chamada possível em '{}' para o token '{}'".format(automato['name'], regra['estado'], first))
                 estado['chamadas'][first] = regra
+
+    for estado_num, estado in estados.items():
+        intersecao = set(estado['transicoes'].keys()) & set(estado['chamadas'].keys())
+        if len(intersecao) > 0:
+            print("[{}] duvida entre transicao e chamada em {} para os tokens {}".format(automato['name'], estado_num, intersecao))
+
 
     return estados
 

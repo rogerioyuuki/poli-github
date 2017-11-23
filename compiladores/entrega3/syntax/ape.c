@@ -184,13 +184,12 @@ bool consome_token(APE *ape, Token *token) {
         automato->estado = chamada->estadoResultado;
 
         /* Empilha automato e consome token novamente */
-        switch (token->type) {
-            case IDENTIFICADOR:
-            case NUMERO: /* pro rogerio de amanha: aqui tem que checar a submaquina, nao o token recebido */
-                break;
-            default:
-                empilha_automato(ape, busca_novo_automato(ape, chamada->submaquina));
-                consome_token(ape, token);
+        if (strcmp(chamada->submaquina, "IDENTIFICADOR") != 0
+            &&
+            strcmp(chamada->submaquina, "NUMERO") != 0) {
+            /* Não empilha identificador nem número, eles estao no lexico */
+            empilha_automato(ape, busca_novo_automato(ape, chamada->submaquina));
+            consome_token(ape, token);
         }
 
         return true;
