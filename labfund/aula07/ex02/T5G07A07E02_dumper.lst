@@ -1,0 +1,51 @@
+4000 0000 ; "dump_ini<"		;	dump_ini	<
+4001 0000 ; "dump_tam<"		;	dump_tam	<
+4002 0000 ; "dump_ul<"		;	dump_ul		<
+2000 0000 ; "dumper>"		;	dumper		>
+
+				;				&	/0000
+
+8000 0000		;	dumper		$	/0001   0
+				;	dumper		$	/0001
+d002 8001		;				ld	dump_tam ;;;
+a004 603c		;				*	dois	 ;;;
+a006 503c		;				-	dois	 ; definicao endereco limite
+d008 4000		;				+	dump_ini ;;;
+a00a 903a		;				mm	lim_cont ;;;
+d00c 8002		;				ld	dump_ul  ;;;
+a00e 4040		;				+	putDisco ; definicao disco
+a010 902e		;				mm	escrever ;;;
+a012 9018		;				mm	write_end
+a014 901c		;				mm	write_tam
+d016 8000		;				ld	dump_ini
+8018 0000		;	write_end	$	/0001   0
+				;	write_end	$	/0001
+d01a 8001		;				ld	dump_tam
+801c 0000		;	write_tam	$	/0001   0
+				;	write_tam	$	/0001
+a01e 0026		;				jp	loop2
+d020 8000		;	loop1		ld	dump_ini
+a022 403c		;				+	dois
+d024 9000		;				mm	dump_ini
+d026 8000		;	loop2		ld	dump_ini
+a028 403e		;				+	load
+a02a 902c		;				mm	instrucao
+802c 0000		;	instrucao	$	/0001   0
+				;	instrucao	$	/0001
+802e 0000		;	escrever	$	/0001   0
+				;	escrever	$	/0001
+d030 8000		;				ld	dump_ini
+a032 503a		;				-	lim_cont
+a034 1038		;				jz	loop_out
+a036 0020		;				jp	loop1
+a038 b000		;	loop_out	rs	dumper
+
+; constantes
+803a 0000		;	lim_cont	$	/0001   0
+				;	lim_cont	$	/0001
+803c 0002		;	dois		k	/0002
+803e 8000		;	load		k	/8000
+8040 e300		;	putDisco	k	/e300
+
+
+

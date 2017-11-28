@@ -1,0 +1,149 @@
+; VARIAVEIS PACK	
+4000 0000 ; "a<"		;		a	<
+4001 0000 ; "b<"		;		b	<
+2000 0000 ; "pack>"		;		pack	>
+
+; VARIAVEIS UNPACK
+4002 0000 ; "in<"		;		in	<
+4003 0000 ; "unpack1<"		;		unpack1	<
+4004 0000 ; "unpack2<"		;		unpack2	<
+200a 0000 ; "unpack>"		;		unpack	>
+
+; VARIAVEIS STRCMP
+4005 0000 ; "str1<"		;		str1	<
+4006 0000 ; "str2<"		;		str2	<
+4007 0000 ; "out<"		;		out	<
+2044 0000 ; "strcmp>"		;		strcmp	>
+
+				;		&	/0000
+
+; PACK
+8000 0000		;	pack	$	/0001   0
+				;	pack	$	/0001
+d002 8000		;		LD	a
+a004 609e		;		*	shift
+d006 4001		;		+	b
+a008 b000		;		RS	pack
+
+
+; UNPACK
+800a 0000		;	unpack $	/0001 ; 58   0
+				;	unpack $	/0001 ; 58
+d00c 8002		;		LD	in ; 5a
+a00e 9036		;		MM	unpack-in ; 5c
+a010 a014		;		SC	unpacker ; 5e
+a012 b00a		;		RS	unpack		
+; SUB-ROTINA UNPACKER
+8014 0000		;	unpacker $	/0001   0
+				;	unpacker $	/0001
+a016 8036		;		LD	unpack-in
+a018 9040		;		MM	unpack-temp
+; auto-modificacao
+a01a 803c		;		LD	instr
+a01c 50a0		;		-	eins
+a01e 9028		;		MM	instr1
+a020 9030		;		MM	instr3
+a022 803c		;		LD	instr
+a024 40a0		;		+	eins
+a026 902c		;		MM	instr2
+; byte shift:
+a028 8040		;	instr1	LD	unpack-temp
+a02a 9038		;		MM	unpack-out1
+a02c 8040		;	instr2	LD	unpack-temp
+a02e 9040		;		MM	unpack-temp
+a030 8040		;	instr3	LD	unpack-temp
+a032 903a		;		MM	unpack-out2
+a034 b014		;		RS	unpacker	
+
+8036 0000		;	unpack-in $	/0001   0
+				;	unpack-in $	/0001
+8038 0000		;	unpack-out1 $	/0001   0
+				;	unpack-out1 $	/0001
+803a 0000		;	unpack-out2 $	/0001   0
+				;	unpack-out2 $	/0001
+
+a03c 8040		;	instr	LD	unpack-temp
+803e 0000		;		$	/0001   0
+				;		$	/0001
+8040 0000		;	unpack-temp $	/0001   0
+				;	unpack-temp $	/0001
+8042 0000		;		$	/0001   0
+				;		$	/0001
+
+
+; STRCMP
+8044 0000		;	strcmp	$	/0001   0
+				;	strcmp	$	/0001
+a046 a050		;		SC	strcmpsr
+a048 804e		;		LD	strcmp-out
+d04a 9007		;		MM	out
+a04c b044		;		RS	strcmp
+
+804e 0000		;	strcmp-out $	/0001   0
+				;	strcmp-out $	/0001
+
+; STRCMP SUB-ROUTINE
+8050 0000		;	strcmpsr $	/0001   0
+				;	strcmpsr $	/0001
+; Reset output
+8052 3000		;		LV	/0000
+a054 904e		;	        MM	strcmp-out
+; Load and check string end
+d056 8005		;	strcmp-ld1 LD	str1
+a058 107a		;		JZ 	strcmp-end
+a05a 907c		;	        MM 	bytecmp-a
+d05c 8006		;	strcmp-ld2 LD	str2
+a05e 107a		;	        JZ	strcmp-end
+a060 907e		;	        MM	bytecmp-b
+; Compare first byte
+a062 a082		;	        SC	bytecmp
+a064 207a		;	        JN	strcmp-end
+; Increment
+a066 804e		;	        LD	strcmp-out
+a068 40a0		;	        +	eins
+a06a 904e		;	        MM	strcmp-out
+; Next byte - automod
+a06c 8056		;	        LD	strcmp-ld1
+a06e 40a0		;	        + 	eins
+a070 9056		;	        MM	strcmp-ld1
+a072 805c		;	        LD 	strcmp-ld2
+a074 40a0		;	        +	eins
+a076 905c		;		MM	strcmp-ld2
+a078 0056		;	        JP	strcmp-ld1
+a07a b044		;	strcmp-end RS 	strcmp
+
+; Sub-rotina BYTECMP
+; Retorno: 0 - Os bytes são iguais
+;          negativo - os bytes não são iguais
+; Ex: 1234 e 1200 => 0
+;     1100 e 1400 => negativo
+807c 0000		;	bytecmp-a $	/0001   0
+				;	bytecmp-a $	/0001
+807e 0000		;	bytecmp-b $	/0001   0
+				;	bytecmp-b $	/0001
+8080 0000		;	bytecmp-temp $	/0001   0
+				;	bytecmp-temp $	/0001
+8082 0000		;	bytecmp $	/0001   0
+				;	bytecmp $	/0001
+; UNPACK first word
+a084 807c		;		LD	bytecmp-a
+a086 9036		;	        MM 	unpack-in
+a088 a014		;	        SC 	unpacker
+a08a 8038		;	        LD 	unpack-out1
+a08c 9080		;	        MM 	bytecmp-temp
+; UNPACK second word
+a08e 807e		;	        LD 	bytecmp-b
+a090 9036		;	        MM 	unpack-in
+a092 a014		;	        SC 	unpacker
+a094 8038		;	        LD 	unpack-out1
+; Check if equal
+a096 5080		;	        -	bytecmp-temp
+a098 109c		;	        JZ 	bytecmp-end
+a09a 80a2		;	        LD 	negativo
+a09c b082		;	bytecmp-end RS	bytecmp
+
+; CONSTANTES
+809e 0100		;	shift   K       /0100
+80a0 0001		;	eins    K       /0001
+80a2 ffff		;	negativo K      /FFFF
+

@@ -1,0 +1,30 @@
+2000 0000 ; "dumper>"		;	dumper		>
+
+				;				&	/0000
+
+8000 0000		;	dumper		$	/0001   0
+				;	dumper		$	/0001
+a002 000a		;				jp	loop2
+a004 801e		;	loop1		ld	end
+a006 4022		;				+	dois
+a008 901e		;				mm	end
+a00a 801e		;	loop2		ld	end
+a00c 4024		;				+	load
+a00e 9010		;				mm	instrucao
+8010 0000		;	instrucao	$	/0001   0
+				;	instrucao	$	/0001
+8012 e300		;				pd	/300
+a014 801e		;				ld	end
+a016 5020		;				-	lim_cont
+a018 101c		;				jz	loop_out
+a01a 0004		;				jp	loop1
+a01c b000		;	loop_out	rs	dumper
+
+; constantes
+801e 0000		;	end			k	/0000
+8020 0ffe		;	lim_cont	k	/0FFE
+8022 0002		;	dois		k	/0002
+8024 8000		;	load		k	/8000
+
+
+

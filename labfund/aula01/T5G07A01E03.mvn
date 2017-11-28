@@ -1,0 +1,60 @@
+; Exercício 3
+; Contador de ocorrências
+0000 0300 ; Pula para o início do programa 0300
+; Saída:
+0002 0000
+; Número a ser buscado:
+0004 0002
+; Lista de números:
+0006 0001
+0008 0002
+000A 0003
+000C 0002
+000E 0003
+0010 0002
+0012 FFFF
+; Constantes
+0100 0001 ; 1
+0102 0002 ; 2
+0104 FFFF ; Parada da lista
+; Programa:
+; Checagem de fim da lista
+0300 8006 ; Leitura da lista
+0302 9496 ; Elemento da lista para A (parâmetro sub-rotina)
+0304 8104 ; Leitura do código de parada
+0306 9498 ; FFFF para B (parâmetro sub-rotina)
+0308 A500 ; Chamada de igual(A, B) - Checagem de fim da lista
+030A 131E ; Se for igual, vai para o fim
+; Busca do número
+030C 8004 ; Leitura do num buscado
+030E 9498 ; Num buscado para B (parâmetro sub-rotina)
+0310 A500 ; Chamada de igual(A, B) - Busca do número
+0312 2316 ; Se for negativo, pula a próxima linha
+0314 A450 ; Chamada incrementadora
+; Auto-modificação - Próximo item da lista
+0316 8300 ; Instrução para acumulador
+0318 4102 ; Incrementa para próximo item
+031A 9300 ; Salva
+031C 0300 ; Volta ao início
+; Fim:
+031E C31E ; Parada em 0x031E
+; Sub-rotina incrementadora
+; Incrementa a memória 0002 (saída)
+; Deixa acumulador intacto
+0450 0000
+0452 945E ; Armazena o acumulador
+0454 8002 ; Copia 0002 para o acumulador
+0456 4100 ; Soma 1
+0458 9002 ; Armazena em 0002
+045A 845E ; Copia acumulador de volta
+045C B450 ; Retorno
+045E 0000 ; Temporário - armazena acumulador
+; Sub-rotina igual(A, B)
+0496 0000 ; A
+0498 0000 ; B
+0500 0000
+0502 8496 ; Copia A para acumulador
+0504 5498 ; Subtrai acumulador (A) - B
+0506 150A ; Se for 0 (igual) pula para 050A
+0508 8104 ; Se não for igual, deixa acumulador negativo (FFFF)
+050A B500 ; Retorno

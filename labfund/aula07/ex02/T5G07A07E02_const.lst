@@ -1,0 +1,10 @@
+2000 0000 ; "dump_ini>"		;	dump_ini		>
+2002 0000 ; "dump_tam>"		;	dump_tam		>
+2004 0000 ; "dump_ul>"		;	dump_ul			>
+
+				;					&	/0000
+
+8000 0500		;	dump_ini		k	/0500
+8002 0007		;	dump_tam		k	/0007
+8004 0001		;	dump_ul			k	/0001
+

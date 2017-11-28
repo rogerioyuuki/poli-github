@@ -1,0 +1,56 @@
+; UNPACK
+				;	@ /0000
+0000 0008		;	main jp inicio
+; Dados:
+0002 faff		;	A K /FAFF
+0004 0000		;	OUT1 $ /0001   0
+				;	OUT1 $ /0001
+0006 0000		;	OUT2 $ /0001   0
+				;	OUT2 $ /0001
+; Programa
+0008 8002		;	inicio LD A
+000a 9018		;		MM UNPACK-A
+000c a01e		;		SC UNPACK
+000e 801a		;		LD UNPACK-OUT1
+0010 9004		;		MM OUT1
+0012 801c		;		LD UNPACK-OUT2
+0014 9006		;		MM OUT2
+0016 c016		;	fim HM fim
+
+; Sub-rotina UNPACK
+; Inicialização
+0018 0000		;	UNPACK-A $ /0001   0
+				;	UNPACK-A $ /0001
+001a 0000		;	UNPACK-OUT1 $ /0001   0
+				;	UNPACK-OUT1 $ /0001
+001c 0000		;	UNPACK-OUT2 $ /0001   0
+				;	UNPACK-OUT2 $ /0001
+001e 0000		;	UNPACK $ /0001   0
+				;	UNPACK $ /0001
+0020 8018		;		LD UNPACK-A
+0022 9046		;		MM UNPACK-TEMP
+; Auto-modificação:
+0024 8040		;		LD instr
+0026 5042		;		- UM
+0028 9032		;		MM instr1
+002a 903a		;		MM instr3
+002c 8040		;		LD instr
+002e 4042		;		+ UM
+0030 9036		;		MM instr2
+; Byte shift:
+0032 8046		;	instr1 LD UNPACK-TEMP
+0034 901a		;		MM UNPACK-OUT1
+0036 8046		;	instr2 LD UNPACK-TEMP
+0038 9046		;		MM UNPACK-TEMP
+003a 8046		;	instr3 LD UNPACK-TEMP
+003c 901c		;		MM UNPACK-OUT2
+003e b01e		;		RS UNPACK
+; Memória alocada da sub-rotina:
+0040 8046		;	instr LD UNPACK-TEMP ; Instrução principal, a ser modificada
+0042 0001		;	UM K /0001
+0044 0000		;	$ /0001   0
+				;	$ /0001
+0046 0000		;	UNPACK-TEMP $ /0001   0
+				;	UNPACK-TEMP $ /0001
+0048 0000		;	$ /0001   0
+				;	$ /0001

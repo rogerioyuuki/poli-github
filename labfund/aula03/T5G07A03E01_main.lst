@@ -1,0 +1,67 @@
+; PACK
+4000 0000 ; "a<"		;		a	<
+4001 0000 ; "b<"		;		b	<
+4002 0000 ; "pack<"		;		pack	<
+
+; UNPACK
+4003 0000 ; "in<"		;		in	<
+4004 0000 ; "unpack1<"		;		unpack1 <
+4005 0000 ; "unpack2<"		;		unpack2	<
+4006 0000 ; "unpack<"		;		unpack	<
+
+; STRCMP
+4007 0000 ; "str1<"		;		str1	<
+4008 0000 ; "str2<"		;		str2	<
+4009 0000 ; "out<"		;		out	<
+4010 0000 ; "strcmp<"		;		strcmp	<
+
+				;		&	/0000
+
+a000 0030		;	main	JP	inicio
+
+8002 0010		;	valora	K	/0010
+8004 0064		;	valorb	K	/0064
+8006 0000		;	valorpack $	/0001   0
+				;	valorpack $	/0001
+
+8008 1234		;	valorin	K	/1234
+800a 0000		;	valorunpack1 $	/0001   0
+				;	valorunpack1 $	/0001
+800c 0000		;	valorunpack2 $	/0001   0
+				;	valorunpack2 $	/0001
+
+800e 7661		;	valorstr1 K	'va
+8010 6963		;		K	'ic
+8012 6f61		;		K	'oa
+8014 6600		;		K	/6600
+8016 0000		;		K	/0000
+8018 0000		;		K	/0000
+801a 0000		;		K	/0000
+801c 0000		;		K	/0000
+801e 7661		;	valorstr2 K	'va
+8020 6963		;		K	'ic
+8022 6f61		;		K	'oa
+8024 6600		;		K	/6600
+8026 0000		;		K	/0000
+8028 0000		;	        K       /0000
+802a 0000		;	        K       /0000
+802c 0000		;	        K       /0000
+802e 0000		;	valorout $	/0001   0
+				;	valorout $	/0001
+
+a030 8002		;	inicio	LD	valora ; 30
+d032 9000		;		MM	a ; 32
+a034 8004		;		LD	valorb ; 34
+d036 9001		;		MM	b ; 36
+d038 a002		;		SC	pack ; 38
+a03a 9006		;		MM	valorpack ; 3A
+
+a03c 8008		;		LD	valorin ; 3C
+d03e 9003		;		MM	in ; 3E
+d040 a006		;		SC	unpack ; 40
+d042 8004		;		LD	unpack1 ; 42
+a044 900a		;		MM	valorunpack1 ; 44
+d046 8005		;		LD	unpack2 ; 46
+a048 900c		;		MM	valorunpack2 ; 48
+
+a04a c04a		;	end	HM	end

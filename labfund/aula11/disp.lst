@@ -1,0 +1,5 @@
+3	0	mvn.dispositivo.Disco	txt/batch.txt	b
+3 1 mvn.dispositivo.Disco T5G07A10E01_prog10.exe b
+3 2 mvn.dispositivo.Disco txt/dump.txt b
+3 3 mvn.dispositivo.Disco txt/load.txt b
+3	255	mvn.dispositivo.Disco	txt/erro.txt	b

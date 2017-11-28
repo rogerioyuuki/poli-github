@@ -1,0 +1,106 @@
+; O programa eh feito para numeros hexadecimais em
+; complemento de dois, logo o 4o teste proposto (em que
+; deve-se ordenar (F001,F002,F003)) tem como resposta
+; (F001,F002,F003), ja que F001 = -4095, F002 = -4094
+; e F003 = -4093
+
+0000 0010  ; Ponto de entrada: pulo para as instruções
+
+; Valores iniciais do programa
+0002 0003  ; a
+0004 0002  ; b
+0006 0001  ; c
+
+; Respostas do programa
+0008 0000  ; 
+000A 0000  ; a, b e c ordenados
+000C 0000  ;
+
+; Variaveis do programa
+0500 0000  ; x
+0502 0000  ; y
+0504 0000  ; z (usada para troca(a,b))
+
+; Enderecos das constantes iniciais
+0600 0002  ; endereco do primeiro numero da comparacao
+0602 8000  ; instrucao de LOAD
+0604 9000  ; instrucao de SAVE
+
+; Constantes
+0700 0002
+
+; Programa principal
+0010 8002  ; acc recebe a
+0012 9500  ; x recebe acc
+0014 8004  ; acc recebe b
+0016 9502  ; y recebe acc
+0018 A100  ; call menor(a,b)
+001A 1200  ; se acc == 0000 (y > x), call troca(a,b)
+
+001C 8600  ; 
+001E 4700  ; atualiza endereco do primeiro elemento
+0020 9600  ;
+
+0022 8004  ;  
+0024 9500  ;
+0026 8006  ; segunda comparacao
+0028 9502  ;
+002A A100  ; 
+002C 1204  ;
+
+002E 8600  ;
+0030 5700  ; atualiza endereco do primeiro elemento
+0032 9600  ;
+
+0034 8002
+0036 9500
+0038 8004  ; terceira comparacao
+003A 9502
+003C A100
+003E 1208
+
+0040 8002
+0042 9008
+0044 8004
+0046 900A
+0048 8006
+004A 900C
+004C C04C
+
+; sub-rotina menor(x,y)
+0100 0000
+0102 8500  ; acc recebe x
+0104 5502  ; acc recebe acc - y
+0106 210C  ; se X < Y, acc recebe 0001
+0108 3000  ; ; caso contrario, acc recebe 0000
+010A 010E  ; ; pula para retorno da funcao
+010C 3001  ;
+010E B100  ; retorno
+
+; chamada da funcao troca(a,b)
+0200 A300
+0202 001C
+0204 A300
+0206 002E
+0208 A300
+020A 0040
+
+; sub-rotina troca(a,b)
+0300 0000
+0302 8600  ; acc recebe o endereco do primeiro elemento
+0304 4602  ; cria instrucao LOAD do primeiro elemento
+0306 9316
+0308 4700  ; cria instrucao LOAD do segundo elemento
+030A 931A
+030C 8600  
+030E 4604  ; cria instrucao SAVE no primeiro elemento
+0310 931C
+0312 4700  ; cria instrucao SAVE no segundo elemento
+0314 9320
+0316 0000  ; carrega primeiro elemento..
+0318 9504  ; .. e guarda na variavel auxiliar
+031A 0000  ; carrega segundo elemento..
+031C 0000  ; .. e salva no primeiro elemento
+031E 8504  ; carrega valor da variavel auxiliar..
+0320 0000  ; .. e guarda no segundo elemento
+0322 B300

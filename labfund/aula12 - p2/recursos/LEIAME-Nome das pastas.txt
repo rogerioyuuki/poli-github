@@ -1,0 +1,9 @@
+A entrega dos exercícios deve ser feita da seguinte forma:
+
+- Crie uma pasta para cada um dos exercícios, nomeando-as E01, E02 e E03 para as questões 1, 2 e 3
+
+- Coloque esses exercícios em uma pasta nomeada GXX, onde XX é o número calculado conforme instruções na prova (o valor de XX deve ser: 2*numGrupo-1 se seu nome vier alfabeticamente antes do nome de sua dupla; 2*numGrupo caso contrário)
+
+- Crie um arquivo de texto nomeado com seu nome e número USP, separados por um hífen. Ou seja, o arquivo deve ser nomeado "<NOME> - <NUSP>". Coloque esse arquivo dentro da pasta GXX.
+
+- IMPORTANTE: caso não tenha feito um exercício, **não crie uma pasta para ele**. Entregue apenas exercícios em que você fez alguma coisa, mesmo que incompleta. Serão aplicadas penalidades caso esta regra não seja seguida, pois esta atitude atrasa desnecessariamente a correção.

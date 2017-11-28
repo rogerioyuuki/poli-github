@@ -1,0 +1,152 @@
+; Exercício 4
+; Contador de primos
+0000 0300 ; Pula para o início do programa 0300
+; Saída:
+0002 0000
+; Número entrada
+0004 0064
+; Constantes
+0100 0001 ; 1
+0102 0002 ; 2
+0104 FFFF ; FFFF
+0106 0003 ; 3
+; Programa:
+0298 0003 ; Temp
+0300 8004 ; Ac = Entrada
+0302 2334 ; Se Entrada negativo, pula pra 334
+0304 1334 ; Se Entrada == 0, pula pra 334
+; if (Entrada == 1): Saída = 0; exit;
+0306 5100 ; Ac = Entrada - 1
+0308 1338 ; Se Entrada - 1 == 0, pula pra 338
+; if (Entrada == 2): Saída = 1; exit;
+030A 8004 ; Ac = Entrada
+030C 5102 ; Ac = Entrada - 2
+030E A450 ; Saída += 1
+0310 1338 ; Se Entrada - 2 = 0, pula pra 338
+; for (Temp = 3; Temp < Entrada + 1; Temp += 2)
+; if (Primo(Temp)): Saída++;
+0312 8004 ; Ac = Entrada
+0314 4100 ; Ac = Entrada + 1
+0316 9748 ; sub-rotina menor B = Entrada + 1
+0318 8298 ; Ac = Temp
+031A 9746 ; sub-rotina menor A = Temp
+031C A750 ; Chamada menor(Temp, Entrada + 1)
+031E 2338 ; Se for menor, encerra o loop, pula pra 338
+0320 8298 ; Ac = Temp
+0322 9664 ; sub-rotina Primo - A = Temp
+0324 A666 ; Chamada sub-rotina primo
+0326 232A ; Se não for primo, pula pra 032A
+0328 A450 ; Incrementa saída
+032A 8298 ; Ac = Temp
+032C 4102 ; Ac = Temp + 2
+032E 9298 ; Temp = Temp + 2
+0330 0310 ; Volta pro loop
+
+; Saída inválida
+0334 8104 ; Ac = FFFF
+0336 9002 ; Saída = FFFF
+; Parada
+0338 C338 ; Parada em 0x0338
+
+; Sub-rotina incrementadora
+; Incrementa a memória 0002 (saída)
+; Deixa acumulador intacto
+0450 0000
+0452 945E ; Armazena o acumulador
+0454 8002 ; Copia 0002 para o acumulador
+0456 4100 ; Soma 1
+0458 9002 ; Armazena em 0002
+045A 845E ; Copia acumulador de volta
+045C B450 ; Retorno
+045E 0000 ; Temporário - armazena acumulador
+
+; Sub-rotina igual(A, B)
+; Retorno: 0        = igual
+;          negativo = não igual
+0496 0000 ; A
+0498 0000 ; B
+0500 0000
+0502 8496 ; Copia A para acumulador
+0504 5498 ; Subtrai acumulador (A) - B
+0506 150A ; Se for 0 (igual) pula para 050A
+0508 8104 ; Se não for igual, deixa acumulador negativo (FFFF)
+050A B500 ; Retorno
+
+; Sub-rotina divisível(A, B)
+; Retorno: 0        = divisível
+;          negativo = não divisível
+0596 0000 ; A
+0598 0000 ; B
+0600 0000
+0602 8596 ; Copia A para acumulador
+0604 9496 ; Parâmetro A da sub-rotina igual
+0606 7598 ; Divide por B
+0608 6598 ; Multiplica por B
+; Verifica se é igual ao valor original:
+060A 9498 ; Parâmetro B da sub-rotina igual
+060C A500 ; Chamada de igual(A, A/B * B)
+060E B600 ; Retorno
+
+; Sub-rotina Primo
+; Verifica se é primo
+; Retorno: 0        = primo
+;          negativo = não primo
+0660 0000 ; Condição
+0662 0003 ; Temp
+0664 0000 ; A
+0666 0000
+; Se A == 2, retorna primo
+0668 8664 ; Ac = A
+066A 9496 ; sub-rotina igual A
+066C 8106 ; Ac = 3
+066E 9662 ; Temp = 3
+0670 9498 ; sub-rotina igual B
+0672 A500 ; igual(A, 2)
+0674 16A8 ; Se for igual, retorna primo
+; Se A divisível por 2, retorna não primo
+0676 8664 ; Ac = A
+0678 9596 ; sub-rotina divisível - A = A
+067A 8102 ; Ac = 2
+067C 9598 ; sub-rotina divisível - B = Temp
+067E A600 ; Chamada divisível(A, Temp)
+0680 16AC ; Se for divisível, retorna negativo
+; for (temp = 3; temp < A/2; temp += 2)
+0682 8664 ; Ac = A
+0684 7102 ; Ac / 2
+0686 9660 ; Condição = Ac = A/2
+0688 8660 ; Ac = Condição
+068A 9748 ; sub-rotina menor - B = Condição
+068C 8662 ; Ac = Temp
+068E 9746 ; sub-rotina menor - A = Temp
+0690 A750 ; Chamada Temp < A/2
+0692 26A8 ; Se for negativo, é primo: retorna
+; if (A divisível por Temp): return 0
+0694 8664 ; Ac = A
+0696 9596 ; sub-rotina divisível - A = A
+0698 8662 ; Ac = Temp
+069A 9598 ; sub-rotina divisível - B = Temp
+069C A600 ; Chamada divisível(A, Temp)
+069E 16AC ; Se for divisível, retorna negativo
+06A0 8662 ; Ac = Temp
+06A2 4102 ; Ac = Temp + 2
+06A4 9662 ; Temp = Temp + 2
+06A6 0688 ; Volta pro loop
+; Retorno primo
+06A8 3000 ; Ac = 0
+06AA B666 ; Retorno
+; Retorno não primo
+06AC 8104 ; Ac = FFFF (negativo)
+06AE B666 ; Retorno
+
+; Sub-rotina A < B
+; Retorno: 0 - True
+;   negativo - False
+0746 0000 ; A
+0748 0000 ; B
+0750 0000
+0752 8748 ; Ac = B
+0754 5746 ; Ac = B - A
+0756 5100 ; Ac = B - A - 1 (caso A = B)
+0758 275C ; Se negativo (A > B), pula pra 075C
+075A 3000 ; Ac = 0
+075C B750 ; Retorno

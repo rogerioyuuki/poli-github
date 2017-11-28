@@ -1,0 +1,7 @@
+@ /0000
+JP MAIN
+TYPE K =6
+LU K =0
+MAIN OS /02AD
+FIM HM FIM
+# main

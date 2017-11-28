@@ -1,0 +1,16 @@
+2000 0000 ; "LOADER_UL>"		;	LOADER_UL 	>
+2002 0000 ; "dump_ini>"		;	dump_ini	>
+2004 0000 ; "dump_tam>"		;	dump_tam	>
+2006 0000 ; "dump_ul>"		;	dump_ul		>
+
+				;				&	/0000
+			
+8000 0000		;	LOADER_UL	$	/0001   0
+				;	LOADER_UL	$	/0001
+8002 0000		;	dump_ini	$	/0001   0
+				;	dump_ini	$	/0001
+8004 0000		;	dump_tam	$	/0001   0
+				;	dump_tam	$	/0001
+8006 0000		;	dump_ul		$	/0001   0
+				;	dump_ul		$	/0001
+			

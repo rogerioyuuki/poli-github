@@ -1,0 +1,125 @@
+; STRCMP
+				;	@ /0000
+0000 0018		;	main jp inicio
+; Dados:
+0002 0000		;	OUT $ /0001   0
+				;	OUT $ /0001
+0004 7661		;	STR1 K 'va
+0006 6963		;		K 'ic
+0008 6f61		;		K 'oa
+000a 6665		;		K 'fe
+000c 0000		;		K /0000
+000e 7661		;	STR2 K 'va
+0010 6963		;		K 'ic
+0012 6f6d		;		K 'om
+0014 6665		;		K 'fe
+0016 0000		;		K /0000
+; Programa
+0018 a022		;	inicio SC STRCMP
+001a 8020		;		LD STRCMP-OUT
+001c 9002		;		MM OUT
+001e c01e		;	fim HM fim
+
+; Sub-rotina STRCMP
+0020 0000		;	STRCMP-OUT $ /0001   0
+				;	STRCMP-OUT $ /0001
+0022 0000		;	STRCMP $ /0001   0
+				;	STRCMP $ /0001
+; Reset output
+0024 3000		;		LV /0000
+0026 9020		;		MM STRCMP-OUT
+; Load and check string end
+0028 8004		;	STRCMP-LD1 LD STR1
+002a 104c		;		JZ STRCMP-END
+002c 904e		;		MM BYTECMP-A
+002e 800e		;	STRCMP-LD2 LD STR2
+0030 104c		;		JZ STRCMP-END
+0032 9050		;		MM BYTECMP-B
+; Compare first byte
+0034 a052		;		SC BYTECMP
+0036 204c		;		JN STRCMP-END
+; Increment
+0038 8020		;		LD STRCMP-OUT
+003a 40a0		;		+ UM
+003c 9020		;		MM STRCMP-OUT
+; Next byte - automod
+003e 8028		;		LD STRCMP-LD1
+0040 40a0		;		+ UM
+0042 9028		;		MM STRCMP-LD1
+0044 802e		;		LD STRCMP-LD2
+0046 40a0		;		+ UM
+0048 902e		;		MM STRCMP-LD2
+004a 0028		;		JP STRCMP-LD1
+004c b022		;	STRCMP-END RS STRCMP
+
+; Sub-rotina BYTECMP
+; Retorno: 0 - Os bytes são iguais
+;          negativo - os bytes não são iguais
+; Ex: 1234 e 1200 => 0
+;     1100 e 1400 => negativo
+004e 0000		;	BYTECMP-A $ /0001   0
+				;	BYTECMP-A $ /0001
+0050 0000		;	BYTECMP-B $ /0001   0
+				;	BYTECMP-B $ /0001
+0052 0000		;	BYTECMP $ /0001   0
+				;	BYTECMP $ /0001
+; UNPACK first word
+0054 804e		;		LD BYTECMP-A
+0056 9070		;		MM UNPACK-A
+0058 a076		;		SC UNPACK
+005a 8072		;		LD UNPACK-OUT1
+005c 906e		;		MM BYTECMP-TEMP
+; UNPACK second word
+005e 8050		;		LD BYTECMP-B
+0060 9070		;		MM UNPACK-A
+0062 a076		;		SC UNPACK
+0064 8072		;		LD UNPACK-OUT1
+; Check if equal
+0066 506e		;		- BYTECMP-TEMP
+0068 106c		;		JZ BYTECMP-END
+006a 80a2		;		LD NEGATIVO
+006c b052		;	BYTECMP-END RS BYTECMP
+006e 0000		;	BYTECMP-TEMP $ /0001   0
+				;	BYTECMP-TEMP $ /0001
+
+; Sub-rotina UNPACK
+; Inicialização
+0070 0000		;	UNPACK-A $ /0001   0
+				;	UNPACK-A $ /0001
+0072 0000		;	UNPACK-OUT1 $ /0001   0
+				;	UNPACK-OUT1 $ /0001
+0074 0000		;	UNPACK-OUT2 $ /0001   0
+				;	UNPACK-OUT2 $ /0001
+0076 0000		;	UNPACK $ /0001   0
+				;	UNPACK $ /0001
+0078 8070		;		LD UNPACK-A
+007a 909c		;		MM UNPACK-TEMP
+; Auto-modificação:
+007c 8098		;		LD instr
+007e 50a0		;		- UM
+0080 908a		;		MM instr1
+0082 9092		;		MM instr3
+0084 8098		;		LD instr
+0086 40a0		;		+ UM
+0088 908e		;		MM instr2
+; Byte shift:
+008a 809c		;	instr1 LD UNPACK-TEMP
+008c 9072		;		MM UNPACK-OUT1
+008e 809c		;	instr2 LD UNPACK-TEMP
+0090 909c		;		MM UNPACK-TEMP
+0092 809c		;	instr3 LD UNPACK-TEMP
+0094 9074		;		MM UNPACK-OUT2
+0096 b076		;		RS UNPACK
+; Memória alocada da sub-rotina:
+0098 809c		;	instr LD UNPACK-TEMP ; Instrução principal, a ser modificada
+009a 0000		;	$ /0001   0
+				;	$ /0001
+009c 0000		;	UNPACK-TEMP $ /0001   0
+				;	UNPACK-TEMP $ /0001
+009e 0000		;	$ /0001   0
+				;	$ /0001
+
+; CONSTANTS
+00a0 0001		;	UM K /0001
+00a2 ffff		;	NEGATIVO K /FFFF
+

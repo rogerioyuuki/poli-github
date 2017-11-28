@@ -1,0 +1,15 @@
+DUMP_INI		>
+DUMP_TAM		>
+DUMP_UL			>
+DUMP_BL			>
+DUMP_EXE		>
+
+				&	/0000
+
+DUMP_INI		$	/0001
+DUMP_TAM		$	/0001
+DUMP_UL			$	/0001
+DUMP_BL			$	/0001
+DUMP_EXE		$	/0001
+
+				#	const

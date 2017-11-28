@@ -1,0 +1,33 @@
+4000 0000 ; "LOADER_UL<"		;	LOADER_UL 	<
+4001 0000 ; "LOADER<"		;	LOADER		<
+4002 0000 ; "dump_ini<"		;	dump_ini	<
+4003 0000 ; "dump_tam<"		;	dump_tam	<
+4004 0000 ; "dump_ul<"		;	dump_ul		<
+4005 0000 ; "dumper<"		;	dumper		<
+
+;========================= N�O ALTERE ESTE TRECHO: IN�CIO ===================;
+				;	& /0000
+a000 000a		;	MAIN			JP	START	; Salta para in�cio do main
+
+; PARAMETROS
+8002 0002		;	UL_TEST			K	/0002	; Unidade logica do disco a ser usado
+
+;========================== N�O ALTERE ESTE TRECHO: FIM =====================;
+
+8004 0400		;	dump_ini_var	k	/0400
+8006 0007		;	dump_tam_var	k	/0007
+8008 0000		;	dump_ul_var		k	/0000
+
+a00a 8002		;	START			LD	UL_TEST
+d00c 9000		;					MM	LOADER_UL	; Invoca loader
+a00e 8004		;					ld	dump_ini_var
+d010 9002		;					mm	dump_ini
+a012 8006		;					ld	dump_tam_var
+d014 9003		;					mm	dump_tam
+a016 8008		;					ld	dump_ul_var
+d018 9004		;					mm	dump_ul
+
+				;sc	dumper
+d01a a001		;					SC 	LOADER		
+a01c c01c		;	FIM_MAIN		HM	FIM_MAIN	; Fim do main
+

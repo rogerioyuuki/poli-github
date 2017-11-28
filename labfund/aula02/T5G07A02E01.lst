@@ -1,0 +1,13 @@
+				;	        @       /0000
+0000 000a		;	MAIN    JP      PACK
+0002 00ab		;	A       K       /00AB
+0004 00cd		;	B       K       /00CD
+0006 0000		;	SAIDA   $       /0001   0
+				;	SAIDA   $       /0001
+0008 0100		;	SHIFT	K	/0100
+
+000a 8002		;	PACK    LD      A
+000c 6008		;	        *       SHIFT
+000e 4004		;	        +       B
+0010 9006		;	        MM      SAIDA
+0012 c012		;	FIM     HM      FIM

@@ -1,0 +1,70 @@
+				;		@	/0000
+0000 0030		;	MAIN	JP	MEMCPY
+0002 0003		;	zahl	K	/0003
+0004 0008		;	ENDIN	K	/0008
+0006 0010		;	ENDOUT	K	/0010
+0008 0001		;		K	/0001
+000a 0002		;		K	/0002
+000c 0003		;		K	/0003
+000e 0004		;		K	/0004
+0010 0000		;		$	/0010		   0
+0012 0000		;		$	/0010		   2
+0014 0000		;		$	/0010		   4
+0016 0000		;		$	/0010		   6
+0018 0000		;		$	/0010		   8
+001a 0000		;		$	/0010		   a
+001c 0000		;		$	/0010		   c
+001e 0000		;		$	/0010		   e
+0020 0000		;		$	/0010		   10
+0022 0000		;		$	/0010		   12
+0024 0000		;		$	/0010		   14
+0026 0000		;		$	/0010		   16
+0028 0000		;		$	/0010		   18
+002a 0000		;		$	/0010		   1a
+002c 0000		;		$	/0010		   1c
+002e 0000		;		$	/0010		   1e
+				;		$	/0010		
+
+0030 8002		;	MEMCPY	LD	zahl
+0032 6070		;		*	zwei
+0034 9078		;		MM	variable
+0036 8006		;		LD	ENDOUT 
+0038 5078		;		-	variable
+003a 5004		;		-	ENDIN  
+003c 2068		;		JN	fehler 
+003e 8002		;	loop	LD	zahl
+0040 1064		;		JZ	ausDemLoop ; 40
+0042 506e		;		-	eins
+0044 9002		;		MM	zahl
+0046 8004		;		LD	ENDIN
+0048 4072		;		+	load
+004a 905e		;		MM	ersteAnweisung
+004c 5072		;		-	load
+004e 4070		;		+	zwei
+0050 9004		;		MM	ENDIN ; 50
+0052 8006		;		LD	ENDOUT
+0054 4074		;		+	save
+0056 9060		;		MM	zweiteAnweisung
+0058 5074		;		-	save
+005a 4070		;		+	zwei
+005c 9006		;		MM	ENDOUT
+005e 0000		;	ersteAnweisung	$	/0001   0
+				;	ersteAnweisung	$	/0001
+0060 0000		;	zweiteAnweisung	$	/0001 ; 60   0
+				;	zweiteAnweisung	$	/0001 ; 60
+0062 003e		;		JP	loop
+
+0064 806c		;	ausDemLoop	LD null
+0066 007a		;		JP	ende
+0068 8076		;	fehler	LD	funfundsechzigtausendfunfhundertfunfunddreissig
+006a 007a		;		JP	ende
+006c 0000		;	null	K	/0000	; 68
+006e 0001		;	eins	K	/0001
+0070 0002		;	zwei	K	/0002
+0072 8000		;	load	K	/8000
+0074 9000		;	save	K	/9000
+0076 ffff		;	funfundsechzigtausendfunfhundertfunfunddreissig	K	/FFFF
+0078 0000		;	variable	$	/0001   0
+				;	variable	$	/0001
+
+007a c07a		;	ende	HM	ende

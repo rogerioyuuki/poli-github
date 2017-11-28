@@ -1,0 +1,4 @@
+3	0	mvn.dispositivo.Disco	batch.txt	b
+3 1 mvn.dispositivo.Disco dump.txt b
+3 2 mvn.dispositivo.Disco load.txt b
+3	255	mvn.dispositivo.Disco	erro.txt	b

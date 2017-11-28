@@ -1,0 +1,72 @@
+;endereco inicial
+;tamanho da imagem
+;+tratamento de erro (maior que a memoria)
+
+4000 0000 ; "LOADER_UL<"		;	LOADER_UL		<
+2000 0000 ; "LOADER>"		;	LOADER			>
+
+				;					&	/0000
+
+8000 0000		;	LOADER			$	/0001   0
+				;	LOADER			$	/0001
+d002 8000		;					ld	LOADER_UL
+a004 4048		;					+	read_disco
+a006 900c		;					mm	ler_end
+a008 9010		;					mm	ler_tam
+a00a 902c		;					mm	instr_leitura
+800c 0000		;	ler_end			$	/0001   0
+				;	ler_end			$	/0001
+a00e 9054		;					mm	endereco
+8010 0000		;	ler_tam			$	/0001   0
+				;	ler_tam			$	/0001
+a012 9056		;					mm	tamanho
+a014 8056		;					ld	tamanho
+a016 604e		;					*	dois
+a018 504e		;					-	dois
+a01a 4054		;					+	endereco
+a01c 9050		;					mm	end_final
+a01e 504a		;					-	limite_memoria
+a020 2026		;					jn	loop
+a022 1026		;					jz	loop
+a024 0040		;					jp	erro
+
+a026 8054		;	loop			ld	endereco
+a028 404c		;					+	save
+a02a 902e		;					mm	escrita
+802c 0000		;	instr_leitura	$	/0001   0
+				;	instr_leitura	$	/0001
+802e 0000		;	escrita			$	/0001   0
+				;	escrita			$	/0001
+
+a030 8054		;					ld	endereco
+a032 5050		;					-	end_final
+a034 103e		;					jz	fim_leitura
+
+a036 8054		;					ld	endereco
+a038 404e		;					+	dois
+a03a 9054		;					mm	endereco
+
+a03c 0026		;					jp	loop
+
+a03e b000		;	fim_leitura		rs	LOADER
+
+a040 8044		;	erro			ld	error_msg_1
+a042 b000		;					rs	LOADER
+
+; constantes
+8044 fffe		;	error_msg_1		k	/fffe ; nao cabe na memoria
+8046 fffc		;	error_msg_2		k	/fffc
+8048 d300		;	read_disco		k	/d300
+804a 0ffe		;	limite_memoria	k	/0ffe
+804c 9000		;	save			k	/9000
+804e 0002		;	dois			k	/0002
+
+8050 0000		;	end_final		$	/0001   0
+				;	end_final		$	/0001
+8052 0000		;	dado			$	/0001   0
+				;	dado			$	/0001
+8054 0000		;	endereco		$	/0001   0
+				;	endereco		$	/0001
+8056 0000		;	tamanho			$	/0001   0
+				;	tamanho			$	/0001
+
