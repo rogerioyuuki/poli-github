@@ -1,0 +1,781 @@
+{
+    "OPERACAO_PILHA": {
+        "estados": {
+            "4": {
+                "transicoes": {},
+                "chamadas": {
+                    "?": {
+                        "estado": "4",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "-": {
+                        "estado": "4",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "<": {
+                        "estado": "4",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "+": {
+                        "estado": "4",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    ">": {
+                        "estado": "4",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    }
+                }
+            },
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    "NUMBER": {
+                        "estado": "1",
+                        "saida": "5",
+                        "transicao": "NUMBER"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "saida": "4",
+                        "transicao": "STACK_IDENTIFIER"
+                    }
+                }
+            },
+            "5": {
+                "transicoes": {},
+                "chamadas": {
+                    ">": {
+                        "estado": "5",
+                        "saida": "3",
+                        "transicao": "OPERACAO_NUMERO"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {
+                    "?": {
+                        "estado": "0",
+                        "saida": "3",
+                        "transicao": "\"?\""
+                    },
+                    "-": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"-\""
+                    },
+                    "<": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"<\""
+                    },
+                    "+": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"+\""
+                    },
+                    ">": {
+                        "estado": "0",
+                        "saida": "2",
+                        "transicao": "\">\""
+                    }
+                },
+                "chamadas": {}
+            },
+            "2": {
+                "transicoes": {},
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "2",
+                        "saida": "4",
+                        "transicao": "STACK_IDENTIFIER"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"<\""
+            },
+            {
+                "estado": "0",
+                "saida": "2",
+                "transicao": "\">\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"+\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"-\""
+            },
+            {
+                "estado": "0",
+                "saida": "3",
+                "transicao": "\"?\""
+            },
+            {
+                "estado": "1",
+                "saida": "4",
+                "transicao": "STACK_IDENTIFIER"
+            },
+            {
+                "estado": "1",
+                "saida": "5",
+                "transicao": "NUMBER"
+            },
+            {
+                "estado": "2",
+                "saida": "4",
+                "transicao": "STACK_IDENTIFIER"
+            },
+            {
+                "estado": "4",
+                "saida": "3",
+                "transicao": "OPERACAO_PILHA"
+            },
+            {
+                "estado": "5",
+                "saida": "3",
+                "transicao": "OPERACAO_NUMERO"
+            }
+        ],
+        "FIRST": [
+            "?",
+            "-",
+            "<",
+            "+",
+            ">"
+        ],
+        "name": "OPERACAO_PILHA",
+        "inicial": "0",
+        "final": [
+            "3",
+            "4",
+            "5"
+        ]
+    },
+    "OPERACAO_NUMERO": {
+        "estados": {
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "STACK_IDENTIFIER"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {
+                    ">": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\">\""
+                    }
+                },
+                "chamadas": {}
+            },
+            "2": {
+                "transicoes": {},
+                "chamadas": {
+                    "?": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "-": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "<": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "+": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    ">": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\">\""
+            },
+            {
+                "estado": "1",
+                "saida": "2",
+                "transicao": "STACK_IDENTIFIER"
+            },
+            {
+                "estado": "2",
+                "saida": "3",
+                "transicao": "OPERACAO_PILHA"
+            }
+        ],
+        "FIRST": [
+            ">"
+        ],
+        "name": "OPERACAO_NUMERO",
+        "inicial": "0",
+        "final": [
+            "2",
+            "3"
+        ]
+    },
+    "EXPRESSAO": {
+        "estados": {
+            "0": {
+                "transicoes": {},
+                "chamadas": {
+                    "NUMBER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "EXP_NUMERO"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "EXP_PILHA"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "EXP_PILHA"
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "EXP_NUMERO"
+            }
+        ],
+        "FIRST": [
+            "NUMBER",
+            "STACK_IDENTIFIER"
+        ],
+        "name": "EXPRESSAO",
+        "inicial": "0",
+        "final": [
+            "1"
+        ]
+    },
+    "DIGITO": {
+        "estados": {
+            "0": {
+                "transicoes": {
+                    "9": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"9\""
+                    },
+                    "1": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"1\""
+                    },
+                    "5": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"5\""
+                    },
+                    "0": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"0\""
+                    },
+                    "2": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"2\""
+                    },
+                    "3": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"3\""
+                    },
+                    "4": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"4\""
+                    },
+                    "8": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"8\""
+                    },
+                    "6": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"6\""
+                    },
+                    "7": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"7\""
+                    }
+                },
+                "chamadas": {}
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"0\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"1\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"2\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"3\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"4\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"5\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"6\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"7\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"8\""
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"9\""
+            }
+        ],
+        "FIRST": [
+            "2",
+            "3",
+            "8",
+            "6",
+            "9",
+            "1",
+            "5",
+            "0",
+            "7",
+            "4"
+        ],
+        "name": "DIGITO",
+        "inicial": "0",
+        "final": [
+            "1"
+        ]
+    },
+    "EXP_NUMERO": {
+        "estados": {
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    ">": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_NUMERO"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {},
+                "chamadas": {
+                    "NUMBER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "NUMBER"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "NUMBER"
+            },
+            {
+                "estado": "1",
+                "saida": "2",
+                "transicao": "OPERACAO_NUMERO"
+            }
+        ],
+        "FIRST": [
+            "NUMBER"
+        ],
+        "name": "EXP_NUMERO",
+        "inicial": "0",
+        "final": [
+            "2"
+        ]
+    },
+    "CONTROL_STRUCTURE": {
+        "estados": {
+            "3": {
+                "transicoes": {
+                    ")": {
+                        "estado": "3",
+                        "saida": "4",
+                        "transicao": "\")\""
+                    }
+                },
+                "chamadas": {
+                    "(": {
+                        "estado": "3",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    },
+                    "NUMBER": {
+                        "estado": "3",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "3",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    }
+                }
+            },
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "STACK_IDENTIFIER"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {
+                    "(": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "\"(\""
+                    }
+                },
+                "chamadas": {}
+            },
+            "2": {
+                "transicoes": {
+                    ")": {
+                        "estado": "2",
+                        "saida": "4",
+                        "transicao": "\")\""
+                    }
+                },
+                "chamadas": {
+                    "?": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "(": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    },
+                    "<": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    },
+                    ">": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "-": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "NUMBER": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "COMANDO"
+                    },
+                    "+": {
+                        "estado": "2",
+                        "saida": "3",
+                        "transicao": "OPERACAO_PILHA"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "\"(\""
+            },
+            {
+                "estado": "1",
+                "saida": "2",
+                "transicao": "STACK_IDENTIFIER"
+            },
+            {
+                "estado": "2",
+                "saida": "3",
+                "transicao": "OPERACAO_PILHA"
+            },
+            {
+                "estado": "2",
+                "saida": "3",
+                "transicao": "COMANDO"
+            },
+            {
+                "estado": "2",
+                "saida": "4",
+                "transicao": "\")\""
+            },
+            {
+                "estado": "3",
+                "saida": "3",
+                "transicao": "COMANDO"
+            },
+            {
+                "estado": "3",
+                "saida": "4",
+                "transicao": "\")\""
+            }
+        ],
+        "FIRST": [
+            "("
+        ],
+        "name": "CONTROL_STRUCTURE",
+        "inicial": "0",
+        "final": [
+            "4"
+        ]
+    },
+    "KIPPLE": {
+        "estados": {
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    "(": {
+                        "estado": "1",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    },
+                    "NUMBER": {
+                        "estado": "1",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {},
+                "chamadas": {
+                    "(": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    },
+                    "NUMBER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "COMANDO"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "COMANDO"
+            },
+            {
+                "estado": "1",
+                "saida": "1",
+                "transicao": "COMANDO"
+            }
+        ],
+        "FIRST": [
+            "(",
+            "NUMBER",
+            "STACK_IDENTIFIER"
+        ],
+        "name": "KIPPLE",
+        "inicial": "0",
+        "final": [
+            "1"
+        ]
+    },
+    "COMANDO": {
+        "estados": {
+            "0": {
+                "transicoes": {},
+                "chamadas": {
+                    "(": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "CONTROL_STRUCTURE"
+                    },
+                    "NUMBER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "EXPRESSAO"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "EXPRESSAO"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "CONTROL_STRUCTURE"
+            },
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "EXPRESSAO"
+            }
+        ],
+        "FIRST": [
+            "(",
+            "NUMBER",
+            "STACK_IDENTIFIER"
+        ],
+        "name": "COMANDO",
+        "inicial": "0",
+        "final": [
+            "1"
+        ]
+    },
+    "EXP_PILHA": {
+        "estados": {
+            "1": {
+                "transicoes": {},
+                "chamadas": {
+                    "?": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "-": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "<": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    "+": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_PILHA"
+                    },
+                    ">": {
+                        "estado": "1",
+                        "saida": "2",
+                        "transicao": "OPERACAO_PILHA"
+                    }
+                }
+            },
+            "0": {
+                "transicoes": {},
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "saida": "1",
+                        "transicao": "STACK_IDENTIFIER"
+                    }
+                }
+            }
+        },
+        "regras": [
+            {
+                "estado": "0",
+                "saida": "1",
+                "transicao": "STACK_IDENTIFIER"
+            },
+            {
+                "estado": "1",
+                "saida": "2",
+                "transicao": "OPERACAO_PILHA"
+            }
+        ],
+        "FIRST": [
+            "STACK_IDENTIFIER"
+        ],
+        "name": "EXP_PILHA",
+        "inicial": "0",
+        "final": [
+            "2"
+        ]
+    }
+}

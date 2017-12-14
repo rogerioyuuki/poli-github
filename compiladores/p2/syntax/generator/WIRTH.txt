@@ -1,0 +1,2 @@
+code = comando { comando } .
+comando = OPERANDO "INTERROG" | OPERANDO "OPERADOR" OPERANDO { "OPERADOR" OPERANDO } | "ABRE" { "OPERADOR" OPERANDO } [ code ] "FECHA"  | "NULL" .

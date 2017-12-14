@@ -1,0 +1,40 @@
+PROGRAMA = {FUNCAO} MAIN {FUNCAO} .
+
+TIPO = "FRANGO" | "MONSTRINHO" | "MONSTRO" | "MONSTRAO" | "TRAPEZIO" | "TRAPEZIO" "DESCENDENTE" | "BICEPS" "FRANGO" | "BICEPS" "MONSTRINHO" | "BICEPS" "MONSTRO" | "BICEPS" "MONSTRAO" .
+
+IDENTIFICADOR = LETRA {LETRA|DIGITO} .
+LETRA =  "a" | "b" | "c" | "d" | "e" | "f"| "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G"  | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" .
+DIGITO = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
+
+FUNCAO = "OH" "O" "HOME" "AI" "PO" "(" TIPO IDENTIFICADOR "(" LISTA_PARAMETROS ")" ")" BLOCO_CODIGO "BIRL" .
+LISTA_PARAMETROS = TIPO IDENTIFICADOR { "," TIPO IDENTIFICADOR } .
+
+MAIN = "HORA" "DO" "SHOW" BLOCO_CODIGO "BIRL" .
+
+BLOCO_CODIGO = COMANDO {COMANDO} .
+
+COMANDO = COMANDO_ATRIBUICAO ";" | CONDICIONAL | ITERATIVO | PRINT | PULO ";" .
+
+COMANDO_ATRIBUICAO = [ TIPO ] ATRIBUICAO { "," ATRIBUICAO } .
+ATRIBUICAO = IDENTIFICADOR "=" EXPRESSAO | IDENTIFICADOR .
+
+EXPRESSAO = EXPRESSAO_L { OPERADOR EXPRESSAO_L } .
+EXPRESSAO_L = IDENTIFICADOR | NUMERO | CHAMADA_FUNCAO | "FIBRA" | "AGUA" | "NEGATIVA" EXPRESSAO | "(" EXPRESSAO ")" .
+
+OPERADOR = OPERADOR_BOOL | OPERADOR_ARITM | OPERADOR_COMP .
+OPERADOR_BOOL = "&&" | "||" .
+OPERADOR_ARITM = "+" | "-" | "/" | "*" | "%" .
+OPERADOR_COMP = ">" [ "=" ] | "<" [ "=" ] | "==" | "!=" .
+
+NUMERO = DIGITO{DIGITO} | DIGITO{DIGITO} "." {DIGITO} | "." DIGITO {DIGITO} .
+
+CHAMADA_FUNCAO = "AJUDA" "O" "MALUCO" "TA" "DOENTE" IDENTIFICADOR "(" [EXPRESSAO { "," EXPRESSAO } ] ")" . 
+
+CONDICIONAL = "ELE" "QUE" "A" "GENTE" "QUER" "?" "(" EXPRESSAO ")" BLOCO_CODIGO [ELSE_IF] "BIRL" .
+ELSE_IF = "QUE" "NAO" "VAI" "DAR" "O" "QUE" "?" "(" EXPRESSAO ")" BLOCO_CODIGO [ELSE_IF] | "NAO" "VAI" "DAR" "NAO" BLOCO_CODIGO .
+
+ITERATIVO = "NEGATIVA" "BAMBAM" "(" EXPRESSAO ")" BLOCO_CODIGO "BIRL" .
+
+PRINT = "CE" "QUER" "VER" "ESSA" "PORRA" "?" "(" IDENTIFICADOR ")" ";"  .
+
+PULO = "BORA" "CUMPADE" EXPRESSAO | "SAI" "FDP" | "VAMO" "MONSTRO" .
