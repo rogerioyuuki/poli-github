@@ -1,10 +1,9 @@
 HORA DO SHOW
-    MONSTRO entrada = 5;
+    MONSTRO entrada = 6;
     MONSTRO fatorial = 1;
     NEGATIVA BAMBAM (entrada > 0)
         fatorial = fatorial * entrada;
         entrada = entrada - 1;
     BIRL
-    CE QUER VER ESSA PORRA? (fatorial);
     BORA CUMPADE 0;
 BIRL

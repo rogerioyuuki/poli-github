@@ -1,12 +1,18 @@
 
 
 ;------- Data Area
-@ /0000
+itoch-A     <
+itoch-OUT1  <
+itoch-OUT2  <
+itoch       <
+& /0000
 MAIN JP INICIO
 ZERO K /0000
 UM K /0001
+entrada K /0000
 0temp K /0000 ; Anonymous Expression
-1temp K =5
+1temp K =6
+fatorial K /0000
 2temp K /0000 ; Anonymous Expression
 3temp K =1
 4temp K /0000 ; Anonymous Expression
@@ -59,12 +65,5 @@ LD 9temp ; Result of Anonymous Expression
 MM entrada ; Assignment
 JP 4tempstartLoop ; Loop
 4tempendLoop LD ZERO
-LD fatorial
-MM itoch-A
-SC itoch
-LD itoch-OUT1
-PD /0
-LD itoch-OUT2
-PD /0
 FIM HM FIM
 # MAIN
