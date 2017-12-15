@@ -1,12 +1,14 @@
-SRC = lib/uthash.h lib/utarray.h lex.yy.c syntax/create_ape.c syntax/ape.c main.c
+SRC = ENTRADA.txt
 
 all: main
 
-lex.yy.c: lexico.flex
-	flex lexico.flex
-
 main: $(SRC)
-	g++ -ggdb $(SRC) -o birlcc
+	./bin/kipc ENTRADA.txt SAIDA.j
+	./kipjar SAIDA.j SAIDA.jar
+	rm SAIDA.j
 
 clean:
-	rm birlcc lex.yy.c
+	rm SAIDA.j SAIDA.jar
+
+run:
+	java -noverify -jar SAIDA.jar

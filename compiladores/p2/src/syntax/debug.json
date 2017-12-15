@@ -1,0 +1,959 @@
+{
+    "CODE": {
+        "final": [
+            "1"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "STACK_IDENTIFIER",
+            "NUMBER",
+            "("
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "EXPRESSION",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "LOOP",
+                "saida": "1"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "transicao": "EXPRESSION",
+                        "saida": "1"
+                    },
+                    "(": {
+                        "estado": "0",
+                        "transicao": "LOOP",
+                        "saida": "1"
+                    },
+                    "NUMBER": {
+                        "estado": "0",
+                        "transicao": "EXPRESSION",
+                        "saida": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "CODE"
+    },
+    "PUSH_L": {
+        "final": [
+            "2",
+            "3",
+            "4"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "<"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\"<\"",
+                "saida": "1"
+            },
+            {
+                "estado": "1",
+                "transicao": "NUMBER",
+                "saida": "2"
+            },
+            {
+                "estado": "1",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "3"
+            },
+            {
+                "estado": "2",
+                "transicao": "PUSH_R",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "PUSH_L",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "PUSH_R",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "ADD_SUB",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "CLEAR",
+                "saida": "4"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "<": {
+                        "estado": "0",
+                        "transicao": "\"<\"",
+                        "saida": "1"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "3"
+                    },
+                    "NUMBER": {
+                        "estado": "1",
+                        "transicao": "NUMBER",
+                        "saida": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "2": {
+                "chamadas": {
+                    ">": {
+                        "estado": "2",
+                        "transicao": "PUSH_R",
+                        "saida": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "3": {
+                "chamadas": {
+                    "?": {
+                        "estado": "3",
+                        "transicao": "CLEAR",
+                        "saida": "4"
+                    },
+                    "+": {
+                        "estado": "3",
+                        "transicao": "ADD_SUB",
+                        "saida": "4"
+                    },
+                    ">": {
+                        "estado": "3",
+                        "transicao": "PUSH_R",
+                        "saida": "4"
+                    },
+                    "-": {
+                        "estado": "3",
+                        "transicao": "ADD_SUB",
+                        "saida": "4"
+                    },
+                    "<": {
+                        "estado": "3",
+                        "transicao": "PUSH_L",
+                        "saida": "4"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "PUSH_L"
+    },
+    "EXPRESSION": {
+        "final": [
+            "3",
+            "5"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "STACK_IDENTIFIER",
+            "NUMBER"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "NUMBER",
+                "saida": "2"
+            },
+            {
+                "estado": "1",
+                "transicao": "OPERATIONS",
+                "saida": "3"
+            },
+            {
+                "estado": "2",
+                "transicao": "\">\"",
+                "saida": "4"
+            },
+            {
+                "estado": "4",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "5"
+            },
+            {
+                "estado": "5",
+                "transicao": "OPERATIONS",
+                "saida": "3"
+            }
+        ],
+        "estados": {
+            "5": {
+                "chamadas": {
+                    "+": {
+                        "estado": "5",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "?": {
+                        "estado": "5",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    ">": {
+                        "estado": "5",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "-": {
+                        "estado": "5",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "<": {
+                        "estado": "5",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "0": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "1"
+                    },
+                    "NUMBER": {
+                        "estado": "0",
+                        "transicao": "NUMBER",
+                        "saida": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "+": {
+                        "estado": "1",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "?": {
+                        "estado": "1",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    ">": {
+                        "estado": "1",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "-": {
+                        "estado": "1",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "<": {
+                        "estado": "1",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    }
+                },
+                "transicoes": {}
+            },
+            "2": {
+                "chamadas": {},
+                "transicoes": {
+                    ">": {
+                        "estado": "2",
+                        "transicao": "\">\"",
+                        "saida": "4"
+                    }
+                }
+            },
+            "4": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "4",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "5"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "EXPRESSION"
+    },
+    "OPERATIONS": {
+        "final": [
+            "1"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "?",
+            "+",
+            ">",
+            "-",
+            "<"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "PUSH_L",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "PUSH_R",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "ADD_SUB",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "CLEAR",
+                "saida": "1"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "?": {
+                        "estado": "0",
+                        "transicao": "CLEAR",
+                        "saida": "1"
+                    },
+                    "+": {
+                        "estado": "0",
+                        "transicao": "ADD_SUB",
+                        "saida": "1"
+                    },
+                    ">": {
+                        "estado": "0",
+                        "transicao": "PUSH_R",
+                        "saida": "1"
+                    },
+                    "-": {
+                        "estado": "0",
+                        "transicao": "ADD_SUB",
+                        "saida": "1"
+                    },
+                    "<": {
+                        "estado": "0",
+                        "transicao": "PUSH_L",
+                        "saida": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "OPERATIONS"
+    },
+    "LOOP": {
+        "final": [
+            "4"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "("
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\"(\"",
+                "saida": "1"
+            },
+            {
+                "estado": "1",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "2"
+            },
+            {
+                "estado": "2",
+                "transicao": "OPERATIONS",
+                "saida": "3"
+            },
+            {
+                "estado": "2",
+                "transicao": "CODE",
+                "saida": "3"
+            },
+            {
+                "estado": "2",
+                "transicao": "\")\"",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "CODE",
+                "saida": "3"
+            },
+            {
+                "estado": "3",
+                "transicao": "\")\"",
+                "saida": "4"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "(": {
+                        "estado": "0",
+                        "transicao": "\"(\"",
+                        "saida": "1"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "2": {
+                "chamadas": {
+                    "?": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "NUMBER": {
+                        "estado": "2",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    },
+                    ">": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "<": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "STACK_IDENTIFIER": {
+                        "estado": "2",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    },
+                    "+": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "(": {
+                        "estado": "2",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    },
+                    "-": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    }
+                },
+                "transicoes": {
+                    ")": {
+                        "estado": "2",
+                        "transicao": "\")\"",
+                        "saida": "4"
+                    }
+                }
+            },
+            "3": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "3",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    },
+                    "(": {
+                        "estado": "3",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    },
+                    "NUMBER": {
+                        "estado": "3",
+                        "transicao": "CODE",
+                        "saida": "3"
+                    }
+                },
+                "transicoes": {
+                    ")": {
+                        "estado": "3",
+                        "transicao": "\")\"",
+                        "saida": "4"
+                    }
+                }
+            }
+        },
+        "name": "LOOP"
+    },
+    "DIGIT": {
+        "final": [
+            "1"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "7",
+            "6",
+            "0",
+            "2",
+            "3",
+            "8",
+            "9",
+            "5",
+            "1",
+            "4"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\"0\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"1\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"2\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"3\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"4\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"5\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"6\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"7\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"8\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"9\"",
+                "saida": "1"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "9": {
+                        "estado": "0",
+                        "transicao": "\"9\"",
+                        "saida": "1"
+                    },
+                    "0": {
+                        "estado": "0",
+                        "transicao": "\"0\"",
+                        "saida": "1"
+                    },
+                    "2": {
+                        "estado": "0",
+                        "transicao": "\"2\"",
+                        "saida": "1"
+                    },
+                    "3": {
+                        "estado": "0",
+                        "transicao": "\"3\"",
+                        "saida": "1"
+                    },
+                    "7": {
+                        "estado": "0",
+                        "transicao": "\"7\"",
+                        "saida": "1"
+                    },
+                    "6": {
+                        "estado": "0",
+                        "transicao": "\"6\"",
+                        "saida": "1"
+                    },
+                    "5": {
+                        "estado": "0",
+                        "transicao": "\"5\"",
+                        "saida": "1"
+                    },
+                    "1": {
+                        "estado": "0",
+                        "transicao": "\"1\"",
+                        "saida": "1"
+                    },
+                    "8": {
+                        "estado": "0",
+                        "transicao": "\"8\"",
+                        "saida": "1"
+                    },
+                    "4": {
+                        "estado": "0",
+                        "transicao": "\"4\"",
+                        "saida": "1"
+                    }
+                }
+            }
+        },
+        "name": "DIGIT"
+    },
+    "CLEAR": {
+        "final": [
+            "1"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "?"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\"?\"",
+                "saida": "1"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "?": {
+                        "estado": "0",
+                        "transicao": "\"?\"",
+                        "saida": "1"
+                    }
+                }
+            }
+        },
+        "name": "CLEAR"
+    },
+    "ADD_SUB": {
+        "final": [
+            "2",
+            "3",
+            "4"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "+",
+            "-"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\"+\"",
+                "saida": "1"
+            },
+            {
+                "estado": "0",
+                "transicao": "\"-\"",
+                "saida": "1"
+            },
+            {
+                "estado": "1",
+                "transicao": "NUMBER",
+                "saida": "2"
+            },
+            {
+                "estado": "1",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "3"
+            },
+            {
+                "estado": "2",
+                "transicao": "PUSH_R",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "PUSH_L",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "PUSH_R",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "ADD_SUB",
+                "saida": "4"
+            },
+            {
+                "estado": "3",
+                "transicao": "CLEAR",
+                "saida": "4"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    "+": {
+                        "estado": "0",
+                        "transicao": "\"+\"",
+                        "saida": "1"
+                    },
+                    "-": {
+                        "estado": "0",
+                        "transicao": "\"-\"",
+                        "saida": "1"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "3"
+                    },
+                    "NUMBER": {
+                        "estado": "1",
+                        "transicao": "NUMBER",
+                        "saida": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "2": {
+                "chamadas": {
+                    ">": {
+                        "estado": "2",
+                        "transicao": "PUSH_R",
+                        "saida": "4"
+                    }
+                },
+                "transicoes": {}
+            },
+            "3": {
+                "chamadas": {
+                    "?": {
+                        "estado": "3",
+                        "transicao": "CLEAR",
+                        "saida": "4"
+                    },
+                    "+": {
+                        "estado": "3",
+                        "transicao": "ADD_SUB",
+                        "saida": "4"
+                    },
+                    ">": {
+                        "estado": "3",
+                        "transicao": "PUSH_R",
+                        "saida": "4"
+                    },
+                    "-": {
+                        "estado": "3",
+                        "transicao": "ADD_SUB",
+                        "saida": "4"
+                    },
+                    "<": {
+                        "estado": "3",
+                        "transicao": "PUSH_L",
+                        "saida": "4"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "ADD_SUB"
+    },
+    "PUSH_R": {
+        "final": [
+            "2",
+            "3"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            ">"
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "\">\"",
+                "saida": "1"
+            },
+            {
+                "estado": "1",
+                "transicao": "STACK_IDENTIFIER",
+                "saida": "2"
+            },
+            {
+                "estado": "2",
+                "transicao": "OPERATIONS",
+                "saida": "3"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {},
+                "transicoes": {
+                    ">": {
+                        "estado": "0",
+                        "transicao": "\">\"",
+                        "saida": "1"
+                    }
+                }
+            },
+            "1": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "transicao": "STACK_IDENTIFIER",
+                        "saida": "2"
+                    }
+                },
+                "transicoes": {}
+            },
+            "2": {
+                "chamadas": {
+                    "+": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "?": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    ">": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "-": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    },
+                    "<": {
+                        "estado": "2",
+                        "transicao": "OPERATIONS",
+                        "saida": "3"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "PUSH_R"
+    },
+    "KIPPLE": {
+        "final": [
+            "1"
+        ],
+        "inicial": "0",
+        "FIRST": [
+            "STACK_IDENTIFIER",
+            "NUMBER",
+            "("
+        ],
+        "regras": [
+            {
+                "estado": "0",
+                "transicao": "CODE",
+                "saida": "1"
+            },
+            {
+                "estado": "1",
+                "transicao": "CODE",
+                "saida": "1"
+            }
+        ],
+        "estados": {
+            "0": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "0",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    },
+                    "(": {
+                        "estado": "0",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    },
+                    "NUMBER": {
+                        "estado": "0",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    }
+                },
+                "transicoes": {}
+            },
+            "1": {
+                "chamadas": {
+                    "STACK_IDENTIFIER": {
+                        "estado": "1",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    },
+                    "(": {
+                        "estado": "1",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    },
+                    "NUMBER": {
+                        "estado": "1",
+                        "transicao": "CODE",
+                        "saida": "1"
+                    }
+                },
+                "transicoes": {}
+            }
+        },
+        "name": "KIPPLE"
+    }
+}

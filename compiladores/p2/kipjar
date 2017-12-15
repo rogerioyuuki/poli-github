@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cp $1 jvm/kre/out/production/kre/Main.j
+python jvm/krakatau/assemble.py -out jvm/kre/out/production/kre jvm/kre/out/production/kre/Main.j
+jar cfve $2 Main -C jvm/kre/out/production/kre .
+rm jvm/kre/out/production/kre/Main.*
